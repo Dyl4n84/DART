@@ -1,1 +1,2 @@
 This is the repo for a project we are working on in a class at Ohio University. The goal of this project is to creat an application that will get data off of NOAA buoys off the coast of Maine and then take the data it stores and find patterns within it and also chart the data for user specified dates. This is to make the researchers job easier and to automate much of the process they often have to do by hand.
+https://docs.google.com/presentation/d/1IARmH_kzmZ9yIHK5kp5m3rmVXDdbRyzqmkCUOf-Gf00/edit?usp=sharing
