@@ -25,3 +25,4 @@ https://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt)
 
 Week 9 Goals
 Create Graphing Class - Dylan
+Complete Form and link to events - Josh
