@@ -22,3 +22,6 @@ WELM1
 
 (These stations' data is available from:
 https://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt)
+
+Week 9 Goals
+Create Graphing Class - Dylan
