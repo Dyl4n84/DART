@@ -1,4 +1,7 @@
-# TO DO: split_Station_Data, save strings into json
+'''
+DOCSTRING - ...
+'''
+
 from datetime import timedelta
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
@@ -35,12 +38,10 @@ file = open('tmp.txt', 'w')
 file.write(page_raw_html.decode("utf-8"))
 file.close()
 
-# Read in 22 items from the text
 file = open('tmp.txt', 'r')
 lines_NOAA_Data = words(file)
 file.close()
 
-### Save the lines into local json files
 attribute_list = []
 data = {}
 
@@ -49,7 +50,6 @@ file = open('tmp.txt', 'r')
 numStations = countStations(file)
 file.close()
 
-
 file = open('tmp.txt', 'r')
 word_NOAA_Data = []
 words_NOAA_Data = words(file)
@@ -57,37 +57,50 @@ for word in words_NOAA_Data:
 	word_NOAA_Data.append(word)
 file.close()
 
+'''
+##### Testing block, delete when done #####
+counterTest = 0
+for item in word_NOAA_Data:
+	print(item)
+	if counterTest == 222:
+		break
+	else:
+		counterTest = counterTest + 1
+'''
+
 counter = 0
 for i in range(len(word_NOAA_Data)):
-	# Attribute Loop => 22 times for 22 words
 	if counter == 21:
-		attribute_list.append(word_NOAA_Data[i])
-		data[str(attribute_list[0])] = {
-			'Latitude': attribute_list[1],
-			'Longitude': attribute_list[2],
-			'Read Date': attribute_list[3] + '-' +
-						attribute_list[4] + '-' +
-						attribute_list[5] + ' ' +
-						attribute_list[6] + ':' +
-						attribute_list[7] + ' GST',
-			'Wind Direction': attribute_list[8],
-			'Wind Speed': attribute_list[9],
-			'Wind Gust': attribute_list[10],
-			'Wave Height': attribute_list[11],
-			'Dominant Wave Period': attribute_list[12],
-			'Atmospheric Pressure': attribute_list[15],
-			'Air Temperature': attribute_list[17],
-			'Water Termperature': attribute_list[18],
-			'Visibility': attribute_list[20],
-			'Tide': attribute_list[21] }
+		if attribute_list[0] == "#STN" or attribute_list[0] == "#text":
+			pass	
+		else:
+			# Add attributes per station to local json file
+			attribute_list.append(word_NOAA_Data[i])
+			data[str(attribute_list[0])] = {
+				'Latitude': attribute_list[1],
+				'Longitude': attribute_list[2],
+				'Read Date': attribute_list[3] + '-' +
+							attribute_list[4] + '-' +
+							attribute_list[5] + ' ' +
+							attribute_list[6] + ':' +
+							attribute_list[7] + ' GST',
+				'Wind Direction': attribute_list[8],
+				'Wind Speed': attribute_list[9],
+				'Wind Gust': attribute_list[10],
+				'Wave Height': attribute_list[11],
+				'Dominant Wave Period': attribute_list[12],
+				'Atmospheric Pressure': attribute_list[15],
+				'Air Temperature': attribute_list[17],
+				'Water Termperature': attribute_list[18],
+				'Visibility': attribute_list[20],
+				'Tide': attribute_list[21] }
 
-		with open("latest_obs.json", "a") as fp:
-			json.dump(data, fp, sort_keys=False, indent=4, separators=(',', ': '))
-
-		counter = 0
 		attribute_list = []
-
+		counter = 0
 	else:
 		attribute_list.append(word_NOAA_Data[i])
 		counter = counter + 1
+
+jsonFile = open("latest_obs.json", "a")
+json.dump(data, jsonFile, sort_keys=False, indent=4, separators=(',', ': '))
 
