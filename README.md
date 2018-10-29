@@ -27,3 +27,4 @@ Week 9 Goals
 Create Graphing Class - Dylan
 Complete Form and link to events - Josh
 Write functions for reading latest_obs.txt - Jack
+Write functions to calculate data such as relative humidity, dew point temperatures etc. - Prachetas
