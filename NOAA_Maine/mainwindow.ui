@@ -10,11 +10,21 @@
     <height>500</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 12pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="dataBox">
     <property name="geometry">
      <rect>
       <x>150</x>
@@ -23,52 +33,48 @@
       <height>101</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);</string>
+    </property>
     <property name="title">
      <string>Buoy Data:</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
     <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>111</width>
+       <width>261</width>
        <height>61</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout"/>
+     <layout class="QVBoxLayout" name="displayData1"/>
     </widget>
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>280</x>
        <y>30</y>
-       <width>121</width>
-       <height>61</height>
+       <width>231</width>
+       <height>21</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+     <layout class="QVBoxLayout" name="displayData2"/>
     </widget>
     <widget class="QWidget" name="verticalLayoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>30</y>
-       <width>121</width>
-       <height>61</height>
+       <x>280</x>
+       <y>60</y>
+       <width>231</width>
+       <height>31</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3"/>
-    </widget>
-    <widget class="QWidget" name="verticalLayoutWidget_4">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>30</y>
-       <width>121</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4"/>
+     <layout class="QVBoxLayout" name="displayData3"/>
     </widget>
    </widget>
    <widget class="QFrame" name="frame">
@@ -86,7 +92,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="controlBox">
      <property name="geometry">
       <rect>
        <x>690</x>
@@ -95,78 +101,112 @@
        <height>291</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+     </property>
      <property name="title">
       <string>Options:</string>
      </property>
-     <widget class="QPushButton" name="pushButton">
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+     <widget class="QPushButton" name="updateButton">
       <property name="geometry">
        <rect>
         <x>9</x>
-        <y>32</y>
+        <y>52</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>update</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="calcButton">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>90</y>
+        <y>110</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>calc</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="graphButton">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>170</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>graph</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="mapButton">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>190</y>
+        <y>230</y>
         <width>81</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>map</string>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
       </property>
      </widget>
     </widget>
-    <widget class="QWebView" name="webView">
+    <widget class="QWebView" name="camView">
      <property name="geometry">
       <rect>
        <x>149</x>
-       <y>9</y>
+       <y>29</y>
        <width>521</width>
-       <height>311</height>
+       <height>291</height>
       </rect>
      </property>
     </widget>
-    <widget class="Line" name="line">
+    <widget class="Line" name="horLine">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>140</x>
        <y>320</y>
-       <width>641</width>
+       <width>541</width>
        <height>21</height>
       </rect>
      </property>
@@ -174,33 +214,180 @@
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="Line" name="line_2">
+    <widget class="Line" name="vertLine2">
      <property name="geometry">
       <rect>
        <x>671</x>
-       <y>10</y>
+       <y>0</y>
        <width>20</width>
-       <height>311</height>
+       <height>441</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
     </widget>
+    <widget class="QListView" name="stationList">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>31</y>
+       <width>121</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="saveButton">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>390</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+     </property>
+     <property name="text">
+      <string>Save &amp;&amp; Exit</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="closeButton">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>416</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+     </property>
+     <property name="text">
+      <string>Close</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="displayLabel">
+     <property name="geometry">
+      <rect>
+       <x>157</x>
+       <y>9</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="text">
+      <string>Viewing (Station Name)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="datetimeLabel">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>5</y>
+       <width>241</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="text">
+      <string>Last Update: YYYY-MM-DD hh:mm GST</string>
+     </property>
+    </widget>
+    <widget class="Line" name="vertLine1">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>0</y>
+       <width>20</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="stationLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;Monospace&quot;;
+border-color: rgb(0, 85, 0);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="text">
+      <string>NOAA Stations:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="exitLabel">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>360</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Exit:</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuNOAA_Maine">
     <property name="title">
-     <string>NOAA: Maine</string>
+     <string>NOAA Monitor: Maine (US)</string>
     </property>
    </widget>
    <addaction name="menuNOAA_Maine"/>
