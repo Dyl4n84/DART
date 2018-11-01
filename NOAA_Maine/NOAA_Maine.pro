@@ -25,15 +25,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    graphdisplay.cpp \
+    buoy.cc
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    graphdisplay.h \
+    buoy.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    graphdisplay.ui
 
 CONFIG += no_keywords # Python redefines some qt keywords
 INCLUDEPATH += /usr/include/python3.6
+
 LIBS += -L/usr/lib/python3.6
 QMAKE_CXXFLAGS += -L/usr/lib/python3.6

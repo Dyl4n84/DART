@@ -4,6 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "graphdisplay.h"
+#include "buoy.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,6 +23,7 @@ void MainWindow::on_updateButton_released()
 {
     /***** Run update code *****/
     // Open input file stream on json file
+    /*
     std::ifstream insJSON;
     std::string jsonInputFile = "latest_obs.json";
     insJSON.open(jsonInputFile, std::ifstream::in);
@@ -32,9 +35,14 @@ void MainWindow::on_updateButton_released()
 
      char * buffer = new char [length];
      insJSON.read (buffer,length);
+     */
 
-     jsonObj = json_parse(*buffer, length);
+     //jsonObj = json_parse(*buffer, length);
 
+     std::ifstream ins;
+     ins.open("latest.txt", ios_base::in);
+     Buoy* b1 = new Buoy();
+     b1->input(ins);
 
 }
 
@@ -47,6 +55,8 @@ void MainWindow::on_calcButton_released()
 void MainWindow::on_graphButton_released()
 {
     // Run graphing code
+    graphDisplay* graphForm = new graphDisplay();
+	graphForm->show();	
 
 }
 
@@ -59,6 +69,7 @@ void MainWindow::on_mapButton_released()
 void MainWindow::on_saveButton_released()
 {
     // Run data archiving code
+    Buoy b1 = Buoy();
 
     // Close the form
     this->close();

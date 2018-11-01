@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "graphdisplay.h"
 
 namespace Ui {
 class MainWindow;
@@ -30,6 +31,9 @@ private Q_SLOTS:
 
 private:
     Ui::MainWindow *ui;
+	graphDisplay* graphform;
+	
+	
 };
 
 #endif // MAINWINDOW_H
