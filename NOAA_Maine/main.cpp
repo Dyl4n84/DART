@@ -3,7 +3,7 @@
 #include <QApplication>
 #include <QtWebKitWidgets>
 
-const QString jsonGenerate = "scrape_NOAA_Data.py";
+const char* JSONGENERATOR = "scrape_NOAA_Data.py";
 
 int main(int argc, char *argv[])
 {
@@ -11,8 +11,9 @@ int main(int argc, char *argv[])
     MainWindow w;
 
     // Load NOAA Station names into stationList
-    FILE *fd = fopen("scrape_NOAA_Data.py", "r");
-    PyRun_SimpleFileEx(fd, "scrape_NOAA_Data.py", 1);
+    //  Py_SetProgramName((wchar_t*)argv[0]);
+    //Py_Initialize();
+
 
     // Select most recently selected buoy
 
