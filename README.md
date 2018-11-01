@@ -25,6 +25,6 @@ https://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt)
 
 Week 9 Goals
 Create Graphing Class - Dylan
-Complete Form and link fundamental controls to events - Josh
+Write in function calls for controlling events 'update' and 'graph'- Josh
 Write functions for reading latest_obs.txt - Jack
 Write functions to calculate data such as relative humidity, dew point temperatures etc. - Prachetas
