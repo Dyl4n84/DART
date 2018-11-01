@@ -1,0 +1,7 @@
+#STN     LAT      LON  YYYY MM DD hh mm WDIR WSPD   GST WVHT  DPD APD MWD   PRES  PTDY  ATMP  WTMP  DEWP  VIS   TIDE
+#text    deg      deg   yr mo day hr mn degT  m/s   m/s   m   sec sec degT   hPa   hPa  degC  degC  degC  nmi     ft
+22101 37.24 126.02 2018 10 19 01 00 100 6.0 MM MM MM MM MM 1027.1 MM 14.9 19.2 MM MM MM
+22102  34.79   125.78  2018 10 19 01 00  20   6.0    MM   MM  MM   MM  MM 1025.6    MM  16.0  18.0    MM   MM     MM
+22103  34.00   127.50  2018 10 19 01 00  20   6.0    MM   MM  MM   MM  MM 1025.9    MM  16.4  19.4    MM   MM     MM
+22104  34.77   128.90  2018 10 19 01 00 350   8.0    MM   MM  MM   MM  MM 1023.1    MM  15.9  21.7    MM   MM     MM
+22105  37.54   130.00  2018 10 19 01 00  10  10.0    MM   MM  MM   MM  MM 1023.8    MM  15.3  19.3    MM   MM     MM
