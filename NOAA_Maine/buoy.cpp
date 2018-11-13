@@ -13,11 +13,6 @@ Buoy::Buoy(){
     for(int j = 0; j < 5; j++){
         date[j] ="MM";
     }
-    /*date[0] =2018;
-    date[1] = 10;
-    date[2] = 25;
-    date[3] = 12;
-    date[4] = 51;*/
     windspeed = "MM";
     winddir ="MM";
     gustspeed = "MM";
@@ -60,7 +55,6 @@ void Buoy::input(std::istream& ins){
     ins >> tide;
 }
 
-
 void Buoy::display(){
     cout << bname << endl;
     cout << "Coordinates are (" << latlon[0] << "," << latlon[1] << ")" << endl;
@@ -78,4 +72,8 @@ void Buoy::display(){
     cout << "Dewpoint temperature is " << dewtemp <<endl;
     cout << "Visibility is " << vis <<endl;
     cout << "Tide is " << tide <<endl;
+}
+
+string Buoy::buoyname(){
+    return bname;
 }
