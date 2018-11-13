@@ -1,4 +1,4 @@
-//#include <iostream>
+#include <iostream>
 #include <string>
 #include <fstream>
 #ifndef BUOY_H
@@ -10,7 +10,8 @@ class Buoy{
 public:
     Buoy(); //constructor
     void input(std::istream& ins);//inputs data
-    void display(); //displays Pressure vector
+    void display();
+    string buoyname();
 private:
     string bname; //name of buoy
     string latlon[2]; //latitude and longitude

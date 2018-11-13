@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    buoy.cc
+    buoy.cc \
+    buoylist.cc
 
 HEADERS += \
-    buoy.h
+    buoy.h \
+    buoylist.h
