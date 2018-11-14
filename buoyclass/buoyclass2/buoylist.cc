@@ -28,7 +28,7 @@ void Buoylist::display(int index){
 
 void Buoylist::search(string target){
     for(int i =0; i < blist.size(); i++){
-        if (target == blist[i].buoyname()){
+        if (target == blist[i].getbname()){
             display(i);
             return;
         }

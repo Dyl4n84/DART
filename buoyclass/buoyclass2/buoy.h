@@ -11,7 +11,24 @@ public:
     Buoy(); //constructor
     void input(std::istream& ins);//inputs data
     void display();
-    string buoyname();
+    string getbname();
+    string getlatlon();
+    string getdate();
+    string getwindspeed();
+    string getwindir();
+    string getgustspeed();
+    string getwaveheight();
+    string getdomwave();
+    string getavewave();
+    string getwavedir();
+    string getseapress();
+    string getpressten();
+    string getairtemp();
+    string getseatemp();
+    string getdewtemp();
+    string getvis();
+    string gettide();
+
 private:
     string bname; //name of buoy
     string latlon[2]; //latitude and longitude

@@ -27,7 +27,6 @@ Buoy::Buoy(){
     dewtemp ="MM";
     vis ="MM";
     tide ="MM";
-
 }
 
 void Buoy::input(std::istream& ins){
@@ -74,7 +73,68 @@ void Buoy::display(){
     cout << "Tide is " << tide <<endl;
 }
 
-string Buoy::buoyname(){
+string Buoy::getbname(){
     return bname;
 }
 
+string Buoy::getlatlon(){
+     string s = "(" + latlon [0] +"," + latlon[1]+")";
+     return s;
+ }
+
+ string Buoy::getdate(){
+     string s = date[1] + "-" +date[2] + "-"+ date[0] + " at " + date[3] + ":" + date[4];
+     return s;
+ }
+
+ string Buoy::getwindspeed(){
+     return windspeed;
+ }
+
+ string Buoy::getgustspeed(){
+     return gustspeed;
+ }
+
+ string Buoy::getwaveheight(){
+     return waveheight;
+ }
+
+ string Buoy::getdomwave(){
+     return domwave;
+ }
+
+ string Buoy::getavewave(){
+     return avewave;
+ }
+
+ string Buoy::getwavedir(){
+     return wavedir;
+ }
+
+ string Buoy::getseapress(){
+     return seapress;
+ }
+
+ string Buoy::getpressten(){
+     return pressten;
+ }
+
+ string Buoy::getseatemp(){
+     return seatemp;
+ }
+
+ string Buoy::getairtemp(){
+     return airtemp;
+ }
+
+ string Buoy::getdewtemp(){
+     return dewtemp;
+ }
+
+ string Buoy::getvis(){
+     return vis;
+ }
+
+ string Buoy::gettide(){
+     return tide;
+ }
