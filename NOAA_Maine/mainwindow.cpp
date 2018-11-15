@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QStringListModel>
+#include <QPixmap>
+#include <QBitmap>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -22,8 +24,29 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    /***** Run update code *****/
+    // Run python script
+    std::string filename = "scrape_NOAA_buoy.py";
+    std::string command = "python3 ";
+    command += filename;
+    system(command.c_str());
+    std::chrono::system_clock::time_point readTime = std::chrono::system_clock::now(); // Current Date & Time
+    std::time_t readTime_t = std::chrono::system_clock::to_time_t(readTime); // Convert to time_t
+    std::string readTime_string = ctime(&readTime_t);
+
+    // Write date and time to label on form
+    readTime_string.erase (std::remove(readTime_string.begin(), readTime_string.end(), '\n'), readTime_string.end());
+    ui->datetimeLabel->setText(QString::fromStdString("Last Update: " + readTime_string + " EST"));
+    \
+    // Append the date and time to the latest_obs text just pulled
+    std::replace( readTime_string.begin(), readTime_string.end(), ' ', '_');
+    std::string fileNameWrite = "latest_obs_" + readTime_string + ".txt";
+    const char *fileName_char = fileNameWrite.c_str();
+    std::rename("tmp.txt", fileName_char);
+
+    // Open the latest_obs_file to read in new data
     std::ifstream ins;
-    ins.open("latest_obs.txt");
+    ins.open(fileNameWrite);
 
     Buoy b1;
     Buoy b2;
@@ -64,6 +87,9 @@ MainWindow::MainWindow(QWidget *parent) :
     // Glue model and view together
     ui->stationList->setModel(model);
 
+    // Load map of northeast usa buoys
+
+
 
 }
 
@@ -83,10 +109,13 @@ void MainWindow::on_updateButton_released()
     std::chrono::system_clock::time_point readTime = std::chrono::system_clock::now(); // Current Date & Time
     std::time_t readTime_t = std::chrono::system_clock::to_time_t(readTime); // Convert to time_t
     std::string readTime_string = ctime(&readTime_t);
+
+    // Write date and time to label on form
+    readTime_string.erase (std::remove(readTime_string.begin(), readTime_string.end(), '\n'), readTime_string.end());
+    ui->datetimeLabel->setText(QString::fromStdString("Last Update: " + readTime_string + " EST"));
     \
     // Append the date and time to the latest_obs text just pulled
     std::replace( readTime_string.begin(), readTime_string.end(), ' ', '_');
-    readTime_string.erase (std::remove(readTime_string.begin(), readTime_string.end(), '\n'), readTime_string.end());
     std::string fileNameWrite = "latest_obs_" + readTime_string + ".txt";
     const char *fileName_char = fileNameWrite.c_str();
     std::rename("tmp.txt", fileName_char);
@@ -134,6 +163,10 @@ void MainWindow::on_updateButton_released()
 
     // Glue model and view together
     ui->stationList->setModel(model);
+
+    // Load selected buoy's data to data display
+
+
 }
 
 void MainWindow::on_calcButton_released()
@@ -178,15 +211,11 @@ void MainWindow::on_stationList_pressed(const QModelIndex &index)
     const QVariant itemData = ui->stationList->model()->data(listIndex);
     const QString stationName = itemData.toString().toLower();
 
-    // Set html
-    const QString stationImagePage = "https://www.ndbc.noaa.gov/station_page.php?station=" + stationName;
+    const QString pathToImage = "StationPictures/" + stationName.toLower() + ".jpg";
+    QPixmap pixmap_StationImage(pathToImage);
+    ui->buoyPicture->setPixmap(pixmap_StationImage);
+    ui->buoyPicture->setMask(pixmap_StationImage.mask());
 
-    // Set html link as station image
-    //const QPixmap stationPicture = ;
-    //ui->buoyPicture->setPixmap();
+    ui->buoyPicture->show();
 
-
-
-    // Display last update time (dateTime)
-    //ui->datetimeLabel->setText();
 }

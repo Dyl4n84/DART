@@ -41,8 +41,12 @@ FORMS += \
     graphdisplay.ui
 
 OTHER_FILES += \
-        latest_obs.txt \
-        latest_obs.json \
+        latest_obs* \
+        Map_USA_Northeast.png \
+        scrape_NOAA_buoy.py \
+
+RESOURCES += \
+        StationPictures \
 
 CONFIG += no_keywords # Python redefines some qt keywords
 INCLUDEPATH += /usr/include/python3.6
