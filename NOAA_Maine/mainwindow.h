@@ -29,6 +29,10 @@ private Q_SLOTS:
 
     void on_closeButton_released();
 
+
+
+    void on_stationList_pressed(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 	graphDisplay* graphform;
