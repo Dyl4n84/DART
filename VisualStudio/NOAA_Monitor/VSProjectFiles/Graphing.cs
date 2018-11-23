@@ -2,7 +2,7 @@
 
 public class Graphing
 {
-	public Class1()
+	public Graphing()
 	{
 	}
 }

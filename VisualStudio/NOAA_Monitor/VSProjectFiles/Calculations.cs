@@ -2,7 +2,7 @@
 
 public class Calculations
 {
-	public Class1()
+	public Calculations()
 	{
 	}
 }

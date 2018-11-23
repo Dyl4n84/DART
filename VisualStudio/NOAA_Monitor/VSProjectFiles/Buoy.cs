@@ -2,7 +2,7 @@
 
 public class Buoy
 {
-	public Class1()
+	public Buoy()
 	{
 	}
 }
