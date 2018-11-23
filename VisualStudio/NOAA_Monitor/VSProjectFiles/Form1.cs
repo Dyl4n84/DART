@@ -26,28 +26,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using MahApps.Metro.Controls;
 
 namespace NOAA_Monitor
 {
-    public partial class MainWindow : Form
+    public partial class MainWindow : MaterialForm
     {
         public MainWindow()
         {
             InitializeComponent();
 
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.LightBlue900,
+                Primary.Blue500, Accent.Cyan700,
+                TextShade.WHITE
+            );
+
             // Initialize weather map with Maine Coast coordinates: 43.952695, -68.672238
-            
+
 
             // Pull in station data
 
+
             // Display station data
 
+
             // Display station picture
-        }
 
-        private void mapBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
 
         }
+
+
+        
     }
 }
