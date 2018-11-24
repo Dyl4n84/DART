@@ -15,20 +15,12 @@
  * Display station pictures on stationList click event
  * Update station data - set limit for every 8 hours
  * Display station data to user
- * Set UI Theme to material design
  */
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using MahApps.Metro.Controls;
+using IronPython.Hosting;
+using System.Diagnostics;
 
 namespace NOAA_Monitor
 {
@@ -64,7 +56,53 @@ namespace NOAA_Monitor
 
         }
 
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            // Run python webscraping script
+            run_cmd(@"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\scrape_NOAA_buoy.py");
 
-        
+            // Add timestamp to buoy data file name
+            timestampFile("tmp.txt");
+
+            // Read in new Buoy data
+            //readBuoyData();
+
+            // Re-populate buoy data
+        }
+
+        private void run_cmd(string cmd)
+        {
+            
+            ProcessStartInfo pythonInfo = new ProcessStartInfo();
+            Process python;
+            pythonInfo.FileName = @"C:\Python27\python.exe";
+            pythonInfo.Arguments = cmd;
+            pythonInfo.CreateNoWindow = true;
+            pythonInfo.UseShellExecute = false;
+            pythonInfo.RedirectStandardOutput = true;
+
+            python = Process.Start(pythonInfo);
+            python.WaitForExit();
+            python.Close();
+
+
+            
+        }
+
+        public void timestampFile(string _fileName)
+        {
+            string nowDateTime;
+
+            nowDateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
+            nowDateTime = nowDateTime.Replace('/', '_');
+            nowDateTime = nowDateTime.Replace(':', '\0');
+            _fileName += "_" + nowDateTime;
+        }        
+
+        public void readBuoyData(string _fileName)
+        {
+            // Call buoy input stream function using _fileName as input
+
+        }
     }
 }
