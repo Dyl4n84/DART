@@ -1,27 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 
-
-public class buoylist
+public class BuoyList
 {
-    /**
-     * 
-     * 
-     * 
-     */
-    List<buoy> blist;
-	public buoylist()
-	{
-        blist = new List<buoy>();
-	}
-
-    public void load(string file)
+    List<Buoy> blist;
+    public BuoyList()
     {
-        string[] lines = File.ReadAllLines(file);
+        blist = new List<Buoy>();
+    }
+
+    public void load()
+    {
+        string[] lines = File.ReadAllLines("test.txt");
         for (int i = 2; i < lines.Length; i++) //i starts at two to skip the first two header lines of the file.
         {
-            buoy temp = new buoy();
+            Buoy temp = new Buoy();
             temp.input(lines[i]);
             blist.Add(temp);
         }
@@ -34,7 +26,8 @@ public class buoylist
 
     public void search(string target)
     {
-        for(int i = 0; i < blist.Count; i++){
+        for (int i = 0; i < blist.Count; i++)
+        {
             if (target == blist[i].getbname())
             {
                 blist[i].display();
@@ -46,3 +39,4 @@ public class buoylist
     }
 
 }
+

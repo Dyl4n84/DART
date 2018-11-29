@@ -11,9 +11,9 @@ namespace buoyclassVS
         static void Main(string[] args)
         {
             buoylist listofbuoys = new buoylist();
-            listofbuoys.load();
+            listofbuoys.load("test.txt");
             //listofbuoys.bdisplay(0);
-            listofbuoys.search("KDLP");
+            listofbuoys.search("41008");
         }
     }
 }
