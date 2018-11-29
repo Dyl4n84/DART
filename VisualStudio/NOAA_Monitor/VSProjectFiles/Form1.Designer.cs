@@ -162,7 +162,7 @@
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(501, 577);
+            this.materialRaisedButton2.Location = new System.Drawing.Point(532, 577);
             this.materialRaisedButton2.Margin = new System.Windows.Forms.Padding(12);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
@@ -230,6 +230,7 @@
             this.graphButton.TabIndex = 20;
             this.graphButton.Text = "Graph";
             this.graphButton.UseVisualStyleBackColor = true;
+            this.graphButton.Click += new System.EventHandler(this.graphButton_Click);
             // 
             // reportButton
             // 

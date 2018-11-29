@@ -4,7 +4,7 @@
  * 
  ************************************************
  * 
- * Last Editted: 11.22.2018 @ 2:46PM
+ * Last Editted: 11.26.2018
  * 
  * TO DO: Josh
  * Implement OpenWeatherMap into WebView
@@ -16,6 +16,7 @@
  * Update station data - set limit for every 8 hours
  * Display station data to user
  */
+
 using System;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -30,13 +31,13 @@ namespace NOAA_Monitor
         {
             InitializeComponent();
 
-            // Create a material theme manager and add the form to manage (this)
-            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                // Create a material theme manager and add the form to manage (this)
+                MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+                materialSkinManager.AddFormToManage(this);
+                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
-            // Configure color schema
-            materialSkinManager.ColorScheme = new ColorScheme(
+                // Configure color schema
+                materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Blue400, Primary.LightBlue900,
                 Primary.Blue500, Accent.Cyan700,
                 TextShade.WHITE
@@ -58,14 +59,15 @@ namespace NOAA_Monitor
 
         private void updateButton_Click(object sender, EventArgs e)
         {
+            string pathToSolution = @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles";
             // Run python webscraping script
-            run_cmd(@"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\scrape_NOAA_buoy.py");
+            run_cmd(pathToSolution + @"\scrape_NOAA_buoy.py");
 
             // Add timestamp to buoy data file name
-            timestampFile("tmp.txt");
+            string updatedDataFile = timestampFile(pathToSolution + @"\bin\Debug\tmp.txt");
 
             // Read in new Buoy data
-            //readBuoyData();
+            readBuoyData(updatedDataFile);
 
             // Re-populate buoy data
         }
@@ -74,35 +76,40 @@ namespace NOAA_Monitor
         {
             
             ProcessStartInfo pythonInfo = new ProcessStartInfo();
-            Process python;
-            pythonInfo.FileName = @"C:\Python27\python.exe";
+            // Process python;
+            pythonInfo.FileName = @"py";
             pythonInfo.Arguments = cmd;
             pythonInfo.CreateNoWindow = true;
             pythonInfo.UseShellExecute = false;
-            pythonInfo.RedirectStandardOutput = true;
-
-            python = Process.Start(pythonInfo);
-            python.WaitForExit();
-            python.Close();
-
-
-            
+            pythonInfo.RedirectStandardOutput = false;
+            pythonInfo.RedirectStandardError = false;
+            Process.Start(pythonInfo);
         }
 
-        public void timestampFile(string _fileName)
+        public string timestampFile(string _fileName)
         {
             string nowDateTime;
 
             nowDateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
             nowDateTime = nowDateTime.Replace('/', '_');
-            nowDateTime = nowDateTime.Replace(':', '\0');
-            _fileName += "_" + nowDateTime;
+            nowDateTime = nowDateTime.Replace(' ', '_');
+            nowDateTime = nowDateTime.Replace(':', '_');
+            string newFileName = "latest_obs-" + nowDateTime + ".txt";
+            System.IO.File.Move(_fileName, newFileName);
+
+            return newFileName;
         }        
 
         public void readBuoyData(string _fileName)
         {
             // Call buoy input stream function using _fileName as input
+            Buoy tmpBuoy = new Buoy();
+            tmpBuoy.input(_fileName);
+        }
 
+        private void graphButton_Click(object sender, EventArgs e)
+        {
+            graphForm graphUI = new graphForm();
         }
     }
 }
