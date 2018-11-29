@@ -22,6 +22,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using IronPython.Hosting;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace NOAA_Monitor
 {
@@ -104,7 +105,18 @@ namespace NOAA_Monitor
         {
             // Call buoy input stream function using _fileName as input
             Buoy tmpBuoy = new Buoy();
-            tmpBuoy.input(_fileName);
+
+            /* Read data for the following buoy stations:
+             * PSBM1 CFWM1 44027 ATGM1 44034 MDRM1
+             * 44037 44033 MISM1 44032 44005 CASM1
+             * 44007 44030 WEQM1 WEXM1 WELM1 */
+            string stationName =
+                "PSBM1 CFWM1 44027 ATGM1 44034" +
+                "MDRM1 44037 44033 MISM1 44032" +
+                "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
+
+            
+
         }
 
         private void graphButton_Click(object sender, EventArgs e)
