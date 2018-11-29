@@ -157,6 +157,43 @@ namespace NOAA_Monitor
         private void stationList_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection selectedItem = stationList.SelectedItems;
+
+            /***** Display buoy data according to station name *****/
+            // Get selected station name
+            var selectedStations = stationList.SelectedItems;
+            var selectedStationName = selectedStations[0].Text;
+
+            for (int i = 0; i < Stations.blist.Count; ++i)
+            {
+                if (Stations.blist[i].getbname() == selectedStationName)
+                {
+                    // Get Buoy from BuoyList
+                    Buoy tmp = new Buoy();
+                    tmp = Stations.blist[i];
+
+                    // Write Buoy data to labels
+                    label1.Text = "Name: " + tmp.getbname();
+                    label2.Text = "Lat/Lon:" + tmp.getlatlon();
+                    label3.Text = "Wind Speed:" + tmp.getwindspeed();
+                    label4.Text = "Gust:" + tmp.getgustspeed();
+                    label5.Text = "Wave Height:" + tmp.getwaveheight();
+                    label6.Text = "Wave Direction:" + tmp.getwavedir();
+                    label7.Text = "Wave Period:" + tmp.getdomwave();
+                    label8.Text = "Mean Tide Level:" + tmp.gettide();
+                    label9.Text = "Sea level Pressure:" + tmp.getseapress();
+                    label10.Text = "Pressure Change:" + tmp.getpressten(); 
+                    label11.Text = "Sea Temp.:" + tmp.getseatemp();
+                    label12.Text = "Air Temp.:" + tmp.getairtemp();
+                    label13.Text = "Dew Point:" + tmp.getdewtemp();
+                    label14.Text = "Visibility:" + tmp.getvis();
+                    
+                }
+            }
+
+            // Clear selected stationList index
+
+
+            // 
         }
     }
 }
