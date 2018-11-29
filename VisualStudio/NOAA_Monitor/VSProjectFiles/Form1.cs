@@ -4,17 +4,15 @@
  * 
  ************************************************
  * 
- * Last Editted: 11.26.2018
+ * Last Editted: 11.28.2018
  * 
  * TO DO: Josh
- * Implement OpenWeatherMap into WebView
  * Pull in buoy station names
- * Set stationList datat source to station names 
- * Map buttons to appropriate class functions
+ * Set stationList data source to station name
+ * Display station data to user
+ * Implement OpenWeatherMap into WebView
  * Set Map Mode buttons to change map overlay
  * Display station pictures on stationList click event
- * Update station data - set limit for every 8 hours
- * Display station data to user
  */
 
 using System;
@@ -23,11 +21,14 @@ using MaterialSkin.Controls;
 using IronPython.Hosting;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace NOAA_Monitor
 {
     public partial class MainWindow : MaterialForm
     {
+        BuoyList Stations = new BuoyList();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -68,9 +69,33 @@ namespace NOAA_Monitor
             string updatedDataFile = timestampFile(pathToSolution + @"\bin\Debug\tmp.txt");
 
             // Read in new Buoy data
-            readBuoyData(updatedDataFile);
+            Stations = readBuoyData(updatedDataFile);
 
             // Re-populate buoy data
+            string stationNames =
+            "PSBM1 CFWM1 44027 ATGM1 44034" +
+            "MDRM1 44037 44033 MISM1 44032" +
+            "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
+
+            List<Buoy>.Enumerator stationIter = Stations.blist.GetEnumerator();
+            Buoy tmpStation = new Buoy();
+
+            ColumnHeader columnHeader1 = new ColumnHeader();
+            columnHeader1.Text = "Station List";
+            this.stationList.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
+            while (stationIter.MoveNext())
+            {
+                tmpStation = stationIter.Current;
+                if (stationNames.Contains(tmpStation.getbname()) && !String.IsNullOrEmpty(tmpStation.getbname()))
+                {
+                    ListViewItem stationNameItems = new ListViewItem(tmpStation.getbname());
+                    stationList.Items.Add(stationNameItems);
+                }
+            }
+
+            stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            //stationList.Columns[0].Width = -2;
+            //stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void run_cmd(string cmd)
@@ -96,32 +121,42 @@ namespace NOAA_Monitor
             nowDateTime = nowDateTime.Replace(' ', '_');
             nowDateTime = nowDateTime.Replace(':', '_');
             string newFileName = "latest_obs-" + nowDateTime + ".txt";
-            System.IO.File.Move(_fileName, newFileName);
-
+            try
+            {
+                System.IO.File.Move(_fileName, newFileName);
+            }
+            catch
+            {
+                return newFileName;
+            }
             return newFileName;
         }        
 
-        public void readBuoyData(string _fileName)
+        public BuoyList readBuoyData(string _fileName)
         {
             // Call buoy input stream function using _fileName as input
-            Buoy tmpBuoy = new Buoy();
-
-            /* Read data for the following buoy stations:
-             * PSBM1 CFWM1 44027 ATGM1 44034 MDRM1
-             * 44037 44033 MISM1 44032 44005 CASM1
-             * 44007 44030 WEQM1 WEXM1 WELM1 */
-            string stationName =
-                "PSBM1 CFWM1 44027 ATGM1 44034" +
-                "MDRM1 44037 44033 MISM1 44032" +
-                "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
-
+            BuoyList tmpBuoys = new BuoyList();
             
+            /*
+            string stationName =
+            "PSBM1 CFWM1 44027 ATGM1 44034" +
+            "MDRM1 44037 44033 MISM1 44032" +
+            "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
+            */
 
+            tmpBuoys.load(_fileName);
+
+            return tmpBuoys;
         }
 
         private void graphButton_Click(object sender, EventArgs e)
         {
             graphForm graphUI = new graphForm();
+        }
+
+        private void stationList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection selectedItem = stationList.SelectedItems;
         }
     }
 }

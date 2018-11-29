@@ -8,6 +8,11 @@ C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\NOAA_Monitor\bin\Deb
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\NOAA_Monitor\bin\Debug\NOAA_Monitor.pdb
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\NOAA_Monitor\obj\Debug\NOAA_Monitor.exe
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\NOAA_Monitor\obj\Debug\NOAA_Monitor.pdb
+C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.MainWindow.resources
+C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.graphForm.resources
+C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.Properties.Resources.resources
+C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.csproj.GenerateResource.cache
+C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.csproj.CoreCompileInputs.cache
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\Debug\NOAA_Monitor.exe.config
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\Debug\NOAA_Monitor.exe
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\Debug\NOAA_Monitor.pdb
@@ -36,11 +41,7 @@ C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\D
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\Debug\Microsoft.Dynamic.xml
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\Debug\Microsoft.Scripting.xml
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\bin\Debug\Microsoft.Scripting.Metadata.xml
-C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.csprojAssemblyReference.cache
-C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.MainWindow.resources
-C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.Properties.Resources.resources
-C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.csproj.GenerateResource.cache
-C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.csproj.CoreCompileInputs.cache
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.csproj.CopyComplete
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.exe
 C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.pdb
+C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\obj\Debug\NOAA_Monitor.csprojAssemblyReference.cache

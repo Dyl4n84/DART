@@ -33,7 +33,7 @@
             this.dataBox = new System.Windows.Forms.GroupBox();
             this.dataList = new MaterialSkin.Controls.MaterialListView();
             this.stationBox = new System.Windows.Forms.GroupBox();
-            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
+            this.stationList = new MaterialSkin.Controls.MaterialListView();
             this.stationPicture = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -55,7 +55,7 @@
             this.mapBrowser.Margin = new System.Windows.Forms.Padding(12);
             this.mapBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.mapBrowser.Name = "mapBrowser";
-            this.mapBrowser.Size = new System.Drawing.Size(435, 372);
+            this.mapBrowser.Size = new System.Drawing.Size(564, 463);
             this.mapBrowser.TabIndex = 0;
             // 
             // dataBox
@@ -65,7 +65,7 @@
             this.dataBox.Location = new System.Drawing.Point(21, 248);
             this.dataBox.Margin = new System.Windows.Forms.Padding(12);
             this.dataBox.Name = "dataBox";
-            this.dataBox.Size = new System.Drawing.Size(237, 307);
+            this.dataBox.Size = new System.Drawing.Size(237, 405);
             this.dataBox.TabIndex = 8;
             this.dataBox.TabStop = false;
             this.dataBox.Text = "Buoy Data";
@@ -82,47 +82,48 @@
             this.dataList.MouseState = MaterialSkin.MouseState.OUT;
             this.dataList.Name = "dataList";
             this.dataList.OwnerDraw = true;
-            this.dataList.Size = new System.Drawing.Size(225, 274);
+            this.dataList.Size = new System.Drawing.Size(225, 371);
             this.dataList.TabIndex = 0;
             this.dataList.UseCompatibleStateImageBehavior = false;
             this.dataList.View = System.Windows.Forms.View.Details;
             // 
             // stationBox
             // 
-            this.stationBox.Controls.Add(this.materialListView2);
+            this.stationBox.Controls.Add(this.stationList);
             this.stationBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stationBox.Location = new System.Drawing.Point(749, 306);
+            this.stationBox.Location = new System.Drawing.Point(895, 304);
             this.stationBox.Margin = new System.Windows.Forms.Padding(12);
             this.stationBox.Name = "stationBox";
-            this.stationBox.Size = new System.Drawing.Size(180, 298);
+            this.stationBox.Size = new System.Drawing.Size(273, 400);
             this.stationBox.TabIndex = 9;
             this.stationBox.TabStop = false;
-            this.stationBox.Text = "Station List";
             // 
-            // materialListView2
+            // stationList
             // 
-            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView2.Depth = 0;
-            this.materialListView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView2.FullRowSelect = true;
-            this.materialListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView2.Location = new System.Drawing.Point(6, 25);
-            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView2.Name = "materialListView2";
-            this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(168, 267);
-            this.materialListView2.TabIndex = 0;
-            this.materialListView2.UseCompatibleStateImageBehavior = false;
-            this.materialListView2.View = System.Windows.Forms.View.Details;
+            this.stationList.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.stationList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.stationList.Depth = 0;
+            this.stationList.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.stationList.FullRowSelect = true;
+            this.stationList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.stationList.Location = new System.Drawing.Point(6, 25);
+            this.stationList.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.stationList.MouseState = MaterialSkin.MouseState.OUT;
+            this.stationList.Name = "stationList";
+            this.stationList.OwnerDraw = true;
+            this.stationList.Size = new System.Drawing.Size(261, 369);
+            this.stationList.TabIndex = 0;
+            this.stationList.UseCompatibleStateImageBehavior = false;
+            this.stationList.View = System.Windows.Forms.View.Details;
+            this.stationList.SelectedIndexChanged += new System.EventHandler(this.stationList_SelectedIndexChanged);
             // 
             // stationPicture
             // 
             this.stationPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.stationPicture.Location = new System.Drawing.Point(749, 136);
+            this.stationPicture.Location = new System.Drawing.Point(895, 86);
             this.stationPicture.Margin = new System.Windows.Forms.Padding(12);
             this.stationPicture.Name = "stationPicture";
-            this.stationPicture.Size = new System.Drawing.Size(180, 146);
+            this.stationPicture.Size = new System.Drawing.Size(273, 194);
             this.stationPicture.TabIndex = 10;
             this.stationPicture.TabStop = false;
             // 
@@ -132,7 +133,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(21, 579);
+            this.materialLabel1.Location = new System.Drawing.Point(16, 677);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(12);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
@@ -146,7 +147,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(614, 577);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(772, 662);
             this.materialRaisedButton1.Margin = new System.Windows.Forms.Padding(6, 12, 6, 12);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
@@ -162,7 +163,7 @@
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(532, 577);
+            this.materialRaisedButton2.Location = new System.Drawing.Point(659, 662);
             this.materialRaisedButton2.Margin = new System.Windows.Forms.Padding(12);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
@@ -176,10 +177,10 @@
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(724, 130);
+            this.materialDivider1.Location = new System.Drawing.Point(870, 86);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(10, 474);
+            this.materialDivider1.Size = new System.Drawing.Size(10, 618);
             this.materialDivider1.TabIndex = 17;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -205,7 +206,7 @@
             this.esriButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.esriButton.Depth = 0;
             this.esriButton.Icon = null;
-            this.esriButton.Location = new System.Drawing.Point(497, 122);
+            this.esriButton.Location = new System.Drawing.Point(508, 122);
             this.esriButton.Margin = new System.Windows.Forms.Padding(12);
             this.esriButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.esriButton.Name = "esriButton";
@@ -221,7 +222,7 @@
             this.graphButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.graphButton.Depth = 0;
             this.graphButton.Icon = null;
-            this.graphButton.Location = new System.Drawing.Point(373, 122);
+            this.graphButton.Location = new System.Drawing.Point(381, 122);
             this.graphButton.Margin = new System.Windows.Forms.Padding(12);
             this.graphButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.graphButton.Name = "graphButton";
@@ -272,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 645);
+            this.ClientSize = new System.Drawing.Size(1180, 725);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.reportButton);
             this.Controls.Add(this.graphButton);
@@ -314,7 +315,7 @@
         private MaterialSkin.Controls.MaterialFlatButton reportButton;
         private MaterialSkin.Controls.MaterialFlatButton updateButton;
         private MaterialSkin.Controls.MaterialListView dataList;
-        private MaterialSkin.Controls.MaterialListView materialListView2;
+        private MaterialSkin.Controls.MaterialListView stationList;
     }
 }
 

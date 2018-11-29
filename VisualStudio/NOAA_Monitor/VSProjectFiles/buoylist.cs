@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 
 
-public class buoylist
+public class BuoyList
 {
     /**
      * 
      * 
      * 
      */
-    List<buoy> blist;
-	public buoylist()
+    public List<Buoy> blist;
+	public BuoyList()
 	{
-        blist = new List<buoy>();
+        blist = new List<Buoy>();
 	}
 
     public void load(string file)
@@ -21,7 +21,7 @@ public class buoylist
         string[] lines = File.ReadAllLines(file);
         for (int i = 2; i < lines.Length; i++) //i starts at two to skip the first two header lines of the file.
         {
-            buoy temp = new buoy();
+            Buoy temp = new Buoy();
             temp.input(lines[i]);
             blist.Add(temp);
         }
