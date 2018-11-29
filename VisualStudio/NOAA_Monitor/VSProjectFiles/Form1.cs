@@ -80,14 +80,10 @@ namespace NOAA_Monitor
             }
             stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
-            // Initialize weather map with Maine Coast coordinates: 43.952695, -68.672238
-            setupMapView("43.952695", "-68.672238");
+            
         }
 
-        public void setupMapView(string latitude, string longitude)
-        {
-
-        }
+        
 
         private void updateButton_Click(object sender, EventArgs e)
         {
@@ -225,6 +221,22 @@ namespace NOAA_Monitor
                 @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\StationPictures\"
                 + _stationName.ToLower()
                 + ".jpg";   
+        }
+
+        private void mapButton_Click(object sender, EventArgs e)
+        {
+            Uri googleMapLink =
+                new Uri("https://www.google.com/maps/place/Monhegan,+ME/@43.8064599,-69.3245106,8.8z/data=!4m13!1m7!3m6!1s0x0:0x0!2zNDPCsDU3JzA5LjciTiA2OMKwNDAnMjAuMSJX!3b1!8m2!3d43.952695!4d-68.672238!3m4!1s0x4cadabf89b385c83:0xefcad36f202a94cd!8m2!3d43.7621682!4d-69.3202972");
+
+            mapBrowser.Url = googleMapLink;
+        }
+
+        private void esriButton_Click(object sender, EventArgs e)
+        {
+            Uri googleSatLink =
+                new Uri("https://www.google.com/maps/place/Monhegan,+ME/@43.8064599,-69.3245106,172059m/data=!3m1!1e3!4m13!1m7!3m6!1s0x0:0x0!2zNDPCsDU3JzA5LjciTiA2OMKwNDAnMjAuMSJX!3b1!8m2!3d43.952695!4d-68.672238!3m4!1s0x4cadabf89b385c83:0xefcad36f202a94cd!8m2!3d43.7621682!4d-69.3202972");
+
+            mapBrowser.Url = googleSatLink;
         }
     }
 }

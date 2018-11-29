@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.mapBrowser = new System.Windows.Forms.WebBrowser();
             this.stationBox = new System.Windows.Forms.GroupBox();
@@ -66,9 +67,10 @@
             this.mapBrowser.Margin = new System.Windows.Forms.Padding(12);
             this.mapBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.mapBrowser.Name = "mapBrowser";
-            this.mapBrowser.Size = new System.Drawing.Size(564, 463);
+            this.mapBrowser.ScrollBarsEnabled = false;
+            this.mapBrowser.Size = new System.Drawing.Size(564, 449);
             this.mapBrowser.TabIndex = 0;
-            this.mapBrowser.Url = new System.Uri("", System.UriKind.Relative);
+            this.mapBrowser.Url = new System.Uri(resources.GetString("mapBrowser.Url"), System.UriKind.Absolute);
             // 
             // stationBox
             // 
@@ -115,13 +117,13 @@
             // 
             this.updateLabel.AutoSize = true;
             this.updateLabel.Depth = 0;
-            this.updateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.updateLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.updateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.updateLabel.Location = new System.Drawing.Point(21, 689);
             this.updateLabel.Margin = new System.Windows.Forms.Padding(12);
             this.updateLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateLabel.Name = "updateLabel";
-            this.updateLabel.Size = new System.Drawing.Size(0, 26);
+            this.updateLabel.Size = new System.Drawing.Size(0, 27);
             this.updateLabel.TabIndex = 11;
             // 
             // materialRaisedButton1
@@ -182,6 +184,7 @@
             this.mapButton.TabIndex = 18;
             this.mapButton.Text = "Map";
             this.mapButton.UseVisualStyleBackColor = true;
+            this.mapButton.Click += new System.EventHandler(this.mapButton_Click);
             // 
             // esriButton
             // 
@@ -198,6 +201,7 @@
             this.esriButton.TabIndex = 19;
             this.esriButton.Text = "SAT";
             this.esriButton.UseVisualStyleBackColor = true;
+            this.esriButton.Click += new System.EventHandler(this.esriButton_Click);
             // 
             // graphButton
             // 

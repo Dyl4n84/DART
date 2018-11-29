@@ -120,7 +120,10 @@
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="mapBrowser.Url" xml:space="preserve">
+    <value>https://www.google.com/maps/place/Monhegan,+ME/@43.3368527,-70.140269,173347m/data=!3m1!1e3!4m13!1m7!3m6!1s0x0:0x0!2zNDPCsDU3JzA5LjciTiA2OMKwNDAnMjAuMSJX!3b1!8m2!3d43.952695!4d-68.672238!3m4!1s0x4cadabf89b385c83:0xefcad36f202a94cd!8m2!3d43.7621682!4d-69.3202972</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>76</value>
   </metadata>
 </root>
