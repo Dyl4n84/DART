@@ -5,6 +5,24 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NOAA_Monitor", "VSProjectFiles\NOAA_Monitor.csproj", "{490DC23C-7599-4901-97E2-CFAB62F05792}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StationPictures", "StationPictures", "{3988E4C8-29DE-4510-BB8D-DDE53D7D959B}"
+	ProjectSection(SolutionItems) = preProject
+		VSProjectFiles\StationPictures\3mfoam.jpg = VSProjectFiles\StationPictures\3mfoam.jpg
+		VSProjectFiles\StationPictures\44007.jpg = VSProjectFiles\StationPictures\44007.jpg
+		VSProjectFiles\StationPictures\44027.jpg = VSProjectFiles\StationPictures\44027.jpg
+		VSProjectFiles\StationPictures\44030.jpg = VSProjectFiles\StationPictures\44030.jpg
+		VSProjectFiles\StationPictures\44032.jpg = VSProjectFiles\StationPictures\44032.jpg
+		VSProjectFiles\StationPictures\44033.jpg = VSProjectFiles\StationPictures\44033.jpg
+		VSProjectFiles\StationPictures\44034.jpg = VSProjectFiles\StationPictures\44034.jpg
+		VSProjectFiles\StationPictures\44037.jpg = VSProjectFiles\StationPictures\44037.jpg
+		VSProjectFiles\StationPictures\casm1.jpg = VSProjectFiles\StationPictures\casm1.jpg
+		VSProjectFiles\StationPictures\mdrm1.jpg = VSProjectFiles\StationPictures\mdrm1.jpg
+		VSProjectFiles\StationPictures\mism1.jpg = VSProjectFiles\StationPictures\mism1.jpg
+		VSProjectFiles\StationPictures\psbm1.jpg = VSProjectFiles\StationPictures\psbm1.jpg
+		VSProjectFiles\StationPictures\weqm1.jpg = VSProjectFiles\StationPictures\weqm1.jpg
+		VSProjectFiles\StationPictures\wexm1.jpg = VSProjectFiles\StationPictures\wexm1.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -45,23 +45,9 @@ namespace NOAA_Monitor
                 TextShade.WHITE
             );
 
-            // Initialize weather map with Maine Coast coordinates: 43.952695, -68.672238
-
-
-            // Pull in station data
-
-
-            // Display station data
-
-
-            // Display station picture
-
-
-        }
-
-        private void updateButton_Click(object sender, EventArgs e)
-        {
+            /***** Trigger updateButton_click Event *****/
             string pathToSolution = @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles";
+
             // Run python webscraping script
             run_cmd(pathToSolution + @"\scrape_NOAA_buoy.py");
 
@@ -92,10 +78,53 @@ namespace NOAA_Monitor
                     stationList.Items.Add(stationNameItems);
                 }
             }
+            stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+
+            // Initialize weather map with Maine Coast coordinates: 43.952695, -68.672238
+            setupMapView("43.952695", "-68.672238");
+        }
+
+        public void setupMapView(string latitude, string longitude)
+        {
+
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            string pathToSolution = @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles";
+
+            // Run python webscraping script
+            run_cmd(pathToSolution + @"\scrape_NOAA_buoy.py");
+
+            // Add timestamp to buoy data file name
+            string updatedDataFile = timestampFile(pathToSolution + @"\bin\Debug\tmp.txt");
+
+            // Read in new Buoy data
+            Stations = readBuoyData(updatedDataFile);
+
+            // Re-populate buoy data
+            string stationNames =
+            "PSBM1 CFWM1 44027 ATGM1 44034 " +
+            "MDRM1 44037 44033 MISM1 44032 " +
+            "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
+
+            List<Buoy>.Enumerator stationIter = Stations.blist.GetEnumerator();
+            Buoy tmpStation = new Buoy();
+
+            ColumnHeader columnHeader1 = new ColumnHeader();
+            columnHeader1.Text = "Station List";
+            this.stationList.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
+            while (stationIter.MoveNext())
+            {
+                tmpStation = stationIter.Current;
+                if (stationNames.Contains(tmpStation.getbname()) && !String.IsNullOrEmpty(tmpStation.getbname()))
+                {
+                    ListViewItem stationNameItems = new ListViewItem(tmpStation.getbname());
+                    stationList.Items.Add(stationNameItems);
+                }
+            }
 
             stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            //stationList.Columns[0].Width = -2;
-            //stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void run_cmd(string cmd)
@@ -116,7 +145,8 @@ namespace NOAA_Monitor
         {
             string nowDateTime;
 
-            nowDateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
+            nowDateTime = DateTime.UtcNow.ToString("MM/dd/yyyy HH:mm");
+            updateLabel.Text = "Last Updated: " + nowDateTime + " GMT";
             nowDateTime = nowDateTime.Replace('/', '_');
             nowDateTime = nowDateTime.Replace(' ', '_');
             nowDateTime = nowDateTime.Replace(':', '_');
@@ -129,6 +159,7 @@ namespace NOAA_Monitor
             {
                 return newFileName;
             }
+
             return newFileName;
         }        
 
@@ -136,14 +167,6 @@ namespace NOAA_Monitor
         {
             // Call buoy input stream function using _fileName as input
             BuoyList tmpBuoys = new BuoyList();
-            
-            /*
-            string stationName =
-            "PSBM1 CFWM1 44027 ATGM1 44034" +
-            "MDRM1 44037 44033 MISM1 44032" +
-            "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
-            */
-
             tmpBuoys.load(_fileName);
 
             return tmpBuoys;
@@ -156,13 +179,15 @@ namespace NOAA_Monitor
 
         private void stationList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView.SelectedListViewItemCollection selectedItem = stationList.SelectedItems;
+            string selectedStationName = "XXXXX";
+            ListView.SelectedListViewItemCollection selectedStations = stationList.SelectedItems;
+            if (selectedStations.Count > 0)
+            {
+                selectedStationName = selectedStations[0].Text;
+            }
 
             /***** Display buoy data according to station name *****/
             // Get selected station name
-            var selectedStations = stationList.SelectedItems;
-            var selectedStationName = selectedStations[0].Text;
-
             for (int i = 0; i < Stations.blist.Count; ++i)
             {
                 if (Stations.blist[i].getbname() == selectedStationName)
@@ -190,10 +215,16 @@ namespace NOAA_Monitor
                 }
             }
 
-            // Clear selected stationList index
+            changeStationPicture(selectedStationName);
+        }
 
-
-            // 
+        public void changeStationPicture(string _stationName)
+        {
+            
+            stationPicture.ImageLocation =
+                @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\StationPictures\"
+                + _stationName.ToLower()
+                + ".jpg";   
         }
     }
 }
