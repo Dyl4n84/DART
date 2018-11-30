@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +14,17 @@ namespace NOAA_Monitor
 {
     public partial class graphForm : MaterialForm
     {
-        public graphForm()
+        BuoyList data;
+        public graphForm(BuoyList tmp)
         {
+            data = tmp;
             InitializeComponent();
+            comboBox1.Items.Add("Wind Speed");
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

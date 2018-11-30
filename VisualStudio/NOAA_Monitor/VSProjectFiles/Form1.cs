@@ -1,11 +1,11 @@
 ﻿/* Program Name: NOAA Monitor - Maine
  * Written By: Jack Mullen, Prachetas Deshpande, Dylan Rogers, Joshua Wright
  * Description: ...
- * 
+ *
  ************************************************
- * 
+ *
  * Last Editted: 11.28.2018
- * 
+ *
  * TO DO: Josh
  * Pull in buoy station names
  * Set stationList data source to station name
@@ -80,10 +80,10 @@ namespace NOAA_Monitor
             }
             stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
-            
+
         }
 
-        
+
 
         private void updateButton_Click(object sender, EventArgs e)
         {
@@ -125,7 +125,7 @@ namespace NOAA_Monitor
 
         private void run_cmd(string cmd)
         {
-            
+
             ProcessStartInfo pythonInfo = new ProcessStartInfo();
             // Process python;
             pythonInfo.FileName = @"py";
@@ -157,7 +157,7 @@ namespace NOAA_Monitor
             }
 
             return newFileName;
-        }        
+        }
 
         public BuoyList readBuoyData(string _fileName)
         {
@@ -170,7 +170,8 @@ namespace NOAA_Monitor
 
         private void graphButton_Click(object sender, EventArgs e)
         {
-            graphForm graphUI = new graphForm();
+            graphForm graphUI = new graphForm(Stations);
+            graphUI.ShowDialog();
         }
 
         private void stationList_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,12 +203,12 @@ namespace NOAA_Monitor
                     label7.Text = "Wave Period:" + tmp.getdomwave();
                     label8.Text = "Mean Tide Level:" + tmp.gettide();
                     label9.Text = "Sea level Pressure:" + tmp.getseapress();
-                    label10.Text = "Pressure Change:" + tmp.getpressten(); 
+                    label10.Text = "Pressure Change:" + tmp.getpressten();
                     label11.Text = "Sea Temp.:" + tmp.getseatemp();
                     label12.Text = "Air Temp.:" + tmp.getairtemp();
                     label13.Text = "Dew Point:" + tmp.getdewtemp();
                     label14.Text = "Visibility:" + tmp.getvis();
-                    
+
                 }
             }
 
@@ -216,11 +217,11 @@ namespace NOAA_Monitor
 
         public void changeStationPicture(string _stationName)
         {
-            
+
             stationPicture.ImageLocation =
                 @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles\StationPictures\"
                 + _stationName.ToLower()
-                + ".jpg";   
+                + ".jpg";
         }
 
         private void mapButton_Click(object sender, EventArgs e)
