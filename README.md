@@ -3,6 +3,3 @@ This is the repo for a project we are working on in a class at Ohio University. 
 The following stations will be tracked by this program: PSBM1 CFWM1 44027 ATGM1 44034 MDRM1 44037 44033 MISM1 44032 44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1
 
 (These stations' data is available from: https://www.ndbc.noaa.gov/data/latest_obs/latest_obs.txt)
-
-Week 11 Goals Create Graphing Class - Dylan Write in event handling for displaying buoy data and Webview of buoy - Josh Write functions for reading latest_obs.txt - Jack Write functions to calculate data such as relative humidity, dew point temperatures etc. - Prachetas
-
