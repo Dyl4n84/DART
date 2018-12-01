@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 
 
-public class buoylist
+public class BuoyList
 {
     /**
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     List<buoy> blist;
 	public buoylist()
