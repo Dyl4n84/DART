@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-public class buoy
+public class Buoy
 {
         string bname; ///< The Buoy ID
         string[] latlon = new string[2]; ///< The latitude longitude coordinates of the buoy
@@ -21,7 +21,7 @@ public class buoy
         string vis; ///< Station visibility in nautical miles
         string tide; ///< The water level in feet above or below Mean Lower Low Water
 
-	public buoy() 
+	public Buoy() 
 	{
         bname = "NULL";
         for (int i = 0; i < 2; i++)
