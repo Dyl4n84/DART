@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 
 
-public class BuoyList
+public class buoylist
 {
     /**
      * 
      * 
      * 
      */
-    public List<Buoy> blist;
-	public BuoyList()
+    List<buoy> blist;
+	public buoylist()
 	{
-        blist = new List<Buoy>();
+        blist = new List<buoy>();
 	}
 
     public void load(string file)
@@ -21,7 +21,7 @@ public class BuoyList
         string[] lines = File.ReadAllLines(file);
         for (int i = 2; i < lines.Length; i++) //i starts at two to skip the first two header lines of the file.
         {
-            Buoy temp = new Buoy();
+            buoy temp = new buoy();
             temp.input(lines[i]);
             blist.Add(temp);
         }
@@ -43,6 +43,16 @@ public class BuoyList
         }
         Console.WriteLine("Not found");
         return;
+    }
+
+    public buoylist(buoylist a)
+    {
+        blist = new List<buoy>();
+        int size = a.blist.Count;
+        for (int i=0; i < size; i++)
+        {
+            blist.Add(a.blist[i]);
+        }
     }
 
 }

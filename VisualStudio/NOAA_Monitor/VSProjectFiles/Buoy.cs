@@ -1,29 +1,28 @@
 ﻿using System;
 using System.IO;
 
-public class Buoy
+public class buoy
 {
-    string bname; /// The Buoy ID
-    string[] latlon = new string[2]; /// The latitude longitude coordinates of the buoy
-    string[] date = new string[5]; /// The date and time of that the data was taken
-    string windspeed; /// Wind speed in meters per second averaged over an eight-minute period for buoys and a two-minute period for land stations.
-    string winddir; /// The direction the wind is coming from in degrees clockwise from true N during the same period used for WSPD
-    string gustspeed; /// Peak five or eight second gust speed in meters per second measured during the eight-minute or two-minute period.
-    string waveheight; /// Significant wave height in meters is calculated as the average of the highest one-third of all of the wave heights during the twenty-minute sampling period.
-    string domwave; /// Dominant wave period seconds is the period with the maximum wave energy.
-    string avewave; /// Average wave period seconds of all waves during the twenty-minute period.
-    string wavedir; /// The direction from which the waves at the dominant period or DPD are coming. The units are degrees from true North increasing clockwise with North as zero degrees and East as ninty degrees. 
-    string seapress; /// Sea level pressure in hPa
-    string pressten; /// the direction plus or minus and the amount of pressure change in hPa for a three hour period ending at the time of observation
-    string airtemp; /// Air temperature in Celsius
-    string seatemp; /// Sea surface temperature in Celsius
-    string dewtemp; /// Dewpoint temperature taken at the same height as the air temperature measurement
-    string vis; /// Station visibility in nautical miles
-    string tide; /// The water level in feet above or below Mean Lower Low Water
+        string bname; ///< The Buoy ID
+        string[] latlon = new string[2]; ///< The latitude longitude coordinates of the buoy
+        string[] date = new string[5]; ///< The date and time of that the data was taken
+        string windspeed; ///< Wind speed in meters per second averaged over an eight-minute period for buoys and a two-minute period for land stations.
+        string winddir; ///< The direction the wind is coming from in degrees clockwise from true N during the same period used for WSPD
+        string gustspeed; ///< Peak five or eight second gust speed in meters per second measured during the eight-minute or two-minute period.
+        string waveheight; ///< Significant wave height in meters is calculated as the average of the highest one-third of all of the wave heights during the twenty-minute sampling period.
+        string domwave; ///< Dominant wave period seconds is the period with the maximum wave energy.
+        string avewave; ///< Average wave period seconds of all waves during the twenty-minute period.
+        string wavedir; ///< The direction from which the waves at the dominant period or DPD are coming. The units are degrees from true North increasing clockwise with North as zero degrees and East as ninty degrees. 
+        string seapress; ///< Sea level pressure in hPa
+        string pressten; ///< the direction plus or minus and the amount of pressure change in hPa for a three hour period ending at the time of observation
+        string airtemp; ///< Air temperature in Celsius
+        string seatemp; ///< Sea surface temperature in Celsius
+        string dewtemp; ///< Dewpoint temperature taken at the same height as the air temperature measurement
+        string vis; ///< Station visibility in nautical miles
+        string tide; ///< The water level in feet above or below Mean Lower Low Water
 
-	public Buoy() 
+	public buoy() 
 	{
-
         bname = "NULL";
         for (int i = 0; i < 2; i++)
         {

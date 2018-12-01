@@ -14,6 +14,8 @@ namespace buoyclassVS
             listofbuoys.load("test.txt");
             //listofbuoys.bdisplay(0);
             listofbuoys.search("41008");
+            buoylist list2 = new buoylist(listofbuoys);
+            list2.bdisplay(0);
         }
     }
 }

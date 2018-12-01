@@ -45,4 +45,14 @@ public class buoylist
         return;
     }
 
+    public buoylist(buoylist a)
+    {
+        blist = new List<buoy>();
+        int size = a.blist.Count;
+        for (int i=0; i < size; i++)
+        {
+            blist.Add(a.blist[i]);
+        }
+    }
+
 }
