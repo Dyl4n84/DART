@@ -32,12 +32,12 @@ The students involved in this project are:
 
 ## Installation
 - Clone the GitHub code
-- [Open the project](VisualStudio/NOAA_Monitor/NOAA_Monitor.sln)
+- Open the [project](VisualStudio/NOAA_Monitor/NOAA_Monitor.sln)
 - Under the Debug tab click the Start Debugging
 
 ## Possible Errors
 If the buoylist class function load says that the file location cannot be found:
-- [Go to the Bin file and put in the directory to the most recent .txt file](VisualStudio/NOAA_Monitor/VSProjectFiles/bin/Debug)
+- Go to the [Bin] file and put in the directory to the most recent .txt file(VisualStudio/NOAA_Monitor/VSProjectFiles/bin/Debug)
 
 If the run_cmd function errors saying invalid parameters for the Process.Start function there is an issue with your python3 installation.
 - Make sure that python3 is in your PATH
