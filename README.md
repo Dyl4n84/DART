@@ -15,9 +15,6 @@ The students involved in this project are:
 - Dylan Rogers
 - Josh Wright
 
-## Table of Contents
-
-
 ## Prerequisites
 
 - Visual Basic .NET 4.6.1 framework
