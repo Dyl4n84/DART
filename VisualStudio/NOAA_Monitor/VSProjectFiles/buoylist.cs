@@ -18,7 +18,7 @@ public class BuoyList
 
     public void load(string file)
     {
-        string[] lines = File.ReadAllLines(file);
+        string[] lines = File.ReadAllLines("C:\\Users\\11dyl\\Documents\\School\\Fall18\\TestingDir\\VisualStudio\\NOAA_Monitor\\VSProjectFiles\\bin\\Debug\\latest_obs-11_30_2018_22_54.txt");
         for (int i = 2; i < lines.Length; i++) //i starts at two to skip the first two header lines of the file.
         {
             Buoy temp = new Buoy();

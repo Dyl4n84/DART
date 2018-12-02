@@ -139,6 +139,11 @@ public class Buoy
         return windspeed;
     }
 
+    public string getwinddirection()
+    {
+        return winddir;
+    }
+
     public string getgustspeed()
     {
         return gustspeed;
