@@ -1,4 +1,15 @@
-﻿using System;
+/*Implementation for the graphForm class used in the LabRats Project.
+*This class is for graphing data from NOAA Buoys off the coast of Maine.
+*All functions are programmed in C# for implementation alongside VB.NET framework 4.6.1.
+*
+****************************
+*
+*Ohio University Athens, OH USA
+*Written By: Dylan Rogers
+*Last Updated: December 3rd, 2018
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +23,9 @@ using MaterialSkin.Controls;
 
 namespace NOAA_Monitor
 {
+  /**
+  *This is the implementation of the graphing for class which inherits the MaterialForm class
+  **/
     public partial class graphForm : MaterialForm
     {
         BuoyList Stations;
@@ -21,7 +35,10 @@ namespace NOAA_Monitor
             "PSBM1 CFWM1 44027 ATGM1 44034" +
             "MDRM1 44037 44033 MISM1 44032" +
             "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
-
+        /**
+        *This is the constructor for the graphForm class
+        * @param tmp is a temporary variable to transfer a BuoyList variable into the space of this class to be used for graphing
+        **/
         public graphForm(BuoyList tmp)
         {
             Stations = new BuoyList(tmp);
@@ -38,7 +55,9 @@ namespace NOAA_Monitor
             comboBox1.Items.Add("Visibility");
             comboBox1.Items.Add("Tide Height");
         }
-
+        /**
+        *This is the function for when the graph button is clicked on the graphingForm
+        **/
         private void button1_Click(object sender, EventArgs e)
         {
             chart1.Series[0].Points.Clear();
@@ -222,60 +241,90 @@ namespace NOAA_Monitor
             chart1.ChartAreas[0].AxisX.Interval = 1;
 
             //Explination for the 0 values in the chart
-            textBox1.AppendText(Environment.NewLine + Environment.NewLine 
+            textBox1.AppendText(Environment.NewLine + Environment.NewLine
                 +"*For all 0 values in the graph assume the buoy or land station did not take a reading");
         }
 
+        /**
+        *This prints out the text for the wind speed graph
+        **/
         public void windSpeedText()
         {
             textBox1.Text = "This graph displays the wind speed recorded from the buoy sensors in meter per second. "
                 + "These measurements were recorded over an average period of 8 minutes for buoys and 2 minutes for land stations.";
         }
 
+        /**
+        *This prints out the text for the wind direction graph
+        **/
         public void windDirectionText()
         {
             textBox1.Text = "This graph displays the wind direction in degrees (°) clockwise from true North "
                 + "during the same period used for the wind speed.";
         }
 
+        /**
+        *This prints out the text for the dominant wave period graph
+        **/
         public void dominantWavePeriodText()
         {
             textBox1.Text = "This graph displays the dominant wave period in seconds. "
                 + "This time is fro the period with the maximum wave energy.";
         }
 
+        /**
+        *This prints out the text for the average wave period graph
+        **/
         public void averageWavePeriodText()
         {
             textBox1.Text = "This graph displays the average wave period in seconds. "
                 + "This was recorded for all waves in a 20-minute period";
         }
 
+        /**
+        *This prints out the text for the sea pressure graph
+        **/
         public void seaPressureText()
         {
             textBox1.Text = "This graph displays the sea pressure in hPa.";
         }
 
+        /**
+        *This prints out the text for the air temperature graph
+        **/
         public void airTemperatureText()
         {
             textBox1.Text = "This graph displays the air temperature in °C";
         }
 
+        /**
+        *This prints out the text for the sea temperature graph
+        **/
         public void seaTemperatureText()
         {
             textBox1.Text = "This graph displays the sea temperature in °C";
         }
 
+        /**
+        *This prints out the text for the dew temperature graph
+        **/
         public void dewTemperatureText()
         {
             textBox1.Text = "This graph displays the dewpoint temperature in °C. "
                + "This was taken at the same height as the air temperature";
         }
 
+        /**
+        *This prints out the text for the visibility distance graph
+        **/
         public void visibilityText()
         {
             textBox1.Text = "This graph displays the visibility distance in nautical miles";
         }
 
+        /**
+        *This prints out the text for the tide height graph
+        **/
         public void tideHeightText()
         {
             textBox1.Text = "This graph displays the water level in feet above of below Mean Low Water";
