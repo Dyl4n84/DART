@@ -10,11 +10,11 @@ namespace buoyclassVS
     {
         static void Main(string[] args)
         {
-            buoylist listofbuoys = new buoylist();
+            BuoyList listofbuoys = new BuoyList();
             listofbuoys.load("test.txt");
             //listofbuoys.bdisplay(0);
             listofbuoys.search("41008");
-            buoylist list2 = new buoylist(listofbuoys);
+            BuoyList list2 = new BuoyList(listofbuoys);
             list2.bdisplay(0);
         }
     }

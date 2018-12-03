@@ -20,8 +20,9 @@ public class Buoy
         string dewtemp; ///< Dewpoint temperature taken at the same height as the air temperature measurement
         string vis; ///< Station visibility in nautical miles
         string tide; ///< The water level in feet above or below Mean Lower Low Water
-
-	public Buoy() 
+    /** The constructor
+    */
+    public Buoy() 
 	{
         bname = "NULL";
         for (int i = 0; i < 2; i++)
@@ -47,31 +48,11 @@ public class Buoy
         vis = "MM";
         tide = "MM";
     }
-
+    /** Inputs a line of data into the buoy
+    * @param A full line from an input file with all the data for a single buoy
+    */
     public void input(string ins)
     {
-        /*ins bname;
-        ins >> latlon[0];
-        ins >> latlon[1];
-        ins >> date[0];
-        ins >> date[1];
-        ins >> date[2];
-        ins >> date[3];
-        ins >> date[4];
-        ins >> windspeed;
-        ins >> winddir;
-        ins >> gustspeed;
-        ins >> waveheight;
-        ins >> domwave;
-        ins >> avewave;
-        ins >> wavedir;
-        ins >> seapress;
-        ins >> pressten;
-        ins >> seatemp;
-        ins >> airtemp;
-        ins >> dewtemp;
-        ins >> vis;
-        ins >> tide;*/
         char[] sep = { ' ' };
         string[] inline = ins.Split(sep, StringSplitOptions.RemoveEmptyEntries);
         bname = inline[0];
@@ -97,6 +78,8 @@ public class Buoy
         vis = inline[20];
         tide = inline[21];
     }
+    /** Displays all information of the buoy
+    */
     public void display()
     {
         Console.WriteLine(bname);
@@ -116,89 +99,116 @@ public class Buoy
         Console.WriteLine("Visibility is {0}", vis);
         Console.WriteLine("Tide is {0}", tide);
     }
-
+    /** Gets the buoy name from the buoy
+    * @return The buoy name
+    */
     public string getbname()
     {
         return bname;
     }
-
+    /** Gets the coordinates of the buoy
+    * @return The latitude and longitude 
+    */
     public string getlatlon()
     {
         string s = "(" + latlon[0] + "," + latlon[1] + ")";
         return s;
     }
-
+    /** Gets the date the data was collected from the buoy
+    * @return The date
+    */
     public string getdate()
     {
         string s = date[1] + "-" + date[2] + "-" + date[0] + " at " + date[3] + ":" + date[4];
         return s;
     }
-
+    /** Gets the wind speed of the buoy
+    * @return The wind speed
+    */
     public string getwindspeed()
     {
         return windspeed;
     }
-
-    public string getwinddirection()
-    {
-        return winddir;
-    }
-
+    /** Gets the gust speed of the buoy
+    * @return The gust speed
+    */
     public string getgustspeed()
     {
         return gustspeed;
     }
-
+    /** Gets the wave height of the buoy
+    * @return The wave height
+    */
     public string getwaveheight()
     {
         return waveheight;
     }
-
+    /** Gets the dominant wave period of the buoy
+    * @return The dominant wave period
+    */
     public string getdomwave()
     {
         return domwave;
     }
-
+    /** Gets the average wave period of the buoy
+    * @return The average wave period
+    */
     public string getavewave()
     {
         return avewave;
     }
-
+    /** Gets the wave direction of the buoy
+    * @return The wave direction
+    */
     public string getwavedir()
     {
         return wavedir;
     }
-
+    /** Gets the sea pressure of the buoy
+    * @return The sea pressure
+    */
     public string getseapress()
     {
         return seapress;
     }
-
+    /** Gets the pressure tendency of the buoy
+    * @return The pressure tendency
+    */
     public string getpressten()
     {
         return pressten;
     }
-
+    /** Gets the sea temperature of the buoy
+    * @return The sea temperature
+    */
     public string getseatemp()
     {
         return seatemp;
     }
-
+    /** Gets the air temperature of the buoy
+    * @return The air temperature
+    */
     public string getairtemp()
     {
         return airtemp;
     }
-
+    /** Gets the dewpoint temperture of the buoy
+    * @return The dewpoint temperature
+    */
     public string getdewtemp()
     {
         return dewtemp;
     }
-
+    /** Gets the visibility of the buoy
+    * @return The visibility
+    */
     public string getvis()
     {
         return vis;
     }
-
+    /** Gets the water level of the buoy
+    * @return The water level
+    */
     public string gettide()
     {
         return tide;
