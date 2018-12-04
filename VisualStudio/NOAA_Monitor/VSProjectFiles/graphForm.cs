@@ -24,7 +24,7 @@ using MaterialSkin.Controls;
 namespace NOAA_Monitor
 {
   /**
-  *This is the implementation of the graphing for class which inherits the MaterialForm class
+  *This is the implementation of the graphing form class which inherits the MaterialForm class
   **/
     public partial class graphForm : MaterialForm
     {
