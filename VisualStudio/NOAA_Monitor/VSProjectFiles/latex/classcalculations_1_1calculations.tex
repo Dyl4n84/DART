@@ -1,0 +1,136 @@
+\hypertarget{classcalculations_1_1calculations}{}\section{calculations.\+calculations Class Reference}
+\label{classcalculations_1_1calculations}\index{calculations.\+calculations@{calculations.\+calculations}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classcalculations_1_1calculations_ab85048dd6fa5d535ea173d996b3968c1}{farenheit\+\_\+to\+\_\+celcius}} (double faren\+\_\+temp)
+\item 
+double \mbox{\hyperlink{classcalculations_1_1calculations_a263a1903afa9a2de7221d69feb45d379}{celcius\+\_\+to\+\_\+farenheit}} (double cel\+\_\+temp)
+\item 
+double \mbox{\hyperlink{classcalculations_1_1calculations_af2e526ba0ac77a303d9b458c2642e5f4}{vapor\+\_\+pressure}} (double air\+\_\+temp)
+\item 
+double \mbox{\hyperlink{classcalculations_1_1calculations_a2b7da37ed1c95d9894ac9dff614db9e7}{saturated\+\_\+vapor\+\_\+pressure}} (double dew\+\_\+point\+\_\+temp)
+\item 
+double \mbox{\hyperlink{classcalculations_1_1calculations_ae71bcea53dda2efe2673f2a4897ab684}{water\+\_\+temp}} (double air\+\_\+temp, double dew\+\_\+point\+\_\+temp, double air\+\_\+pressure)
+\item 
+double \mbox{\hyperlink{classcalculations_1_1calculations_a37b4b4129f95710ac3ed3598d749971c}{dew\+\_\+point}} (double relative\+\_\+humid, double vap\+\_\+pressure)
+\item 
+double \mbox{\hyperlink{classcalculations_1_1calculations_a9577ccf9df8aeea64ea3fa629bc0ea71}{relative\+\_\+humidity}} (double sat\+\_\+vap\+\_\+pressure, double vap\+\_\+pressure)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for all of the calculations being used to find missing values from the buoy data 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcalculations_1_1calculations_a263a1903afa9a2de7221d69feb45d379}\label{classcalculations_1_1calculations_a263a1903afa9a2de7221d69feb45d379}} 
+\index{calculations\+::calculations@{calculations\+::calculations}!celcius\+\_\+to\+\_\+farenheit@{celcius\+\_\+to\+\_\+farenheit}}
+\index{celcius\+\_\+to\+\_\+farenheit@{celcius\+\_\+to\+\_\+farenheit}!calculations\+::calculations@{calculations\+::calculations}}
+\subsubsection{\texorpdfstring{celcius\+\_\+to\+\_\+farenheit()}{celcius\_to\_farenheit()}}
+{\footnotesize\ttfamily double calculations.\+calculations.\+celcius\+\_\+to\+\_\+farenheit (\begin{DoxyParamCaption}\item[{double}]{cel\+\_\+temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to change from celcius to farenheit 
+\begin{DoxyParams}{Parameters}
+{\em cel\+\_\+temp} & is the celcius temperature being converted to farenheit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a double which is the farenheit temperature converted from the given celcius temperature 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcalculations_1_1calculations_a37b4b4129f95710ac3ed3598d749971c}\label{classcalculations_1_1calculations_a37b4b4129f95710ac3ed3598d749971c}} 
+\index{calculations\+::calculations@{calculations\+::calculations}!dew\+\_\+point@{dew\+\_\+point}}
+\index{dew\+\_\+point@{dew\+\_\+point}!calculations\+::calculations@{calculations\+::calculations}}
+\subsubsection{\texorpdfstring{dew\+\_\+point()}{dew\_point()}}
+{\footnotesize\ttfamily double calculations.\+calculations.\+dew\+\_\+point (\begin{DoxyParamCaption}\item[{double}]{relative\+\_\+humid,  }\item[{double}]{vap\+\_\+pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to calculate the dew point 
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+humid} & is the relative humidity used in calculating the dew point \\
+\hline
+{\em vap\+\_\+pressure} & is the vapor pressure used in calculating dew point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the dew point calculated from the given relative\+\_\+humid, and vap\+\_\+pressure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcalculations_1_1calculations_ab85048dd6fa5d535ea173d996b3968c1}\label{classcalculations_1_1calculations_ab85048dd6fa5d535ea173d996b3968c1}} 
+\index{calculations\+::calculations@{calculations\+::calculations}!farenheit\+\_\+to\+\_\+celcius@{farenheit\+\_\+to\+\_\+celcius}}
+\index{farenheit\+\_\+to\+\_\+celcius@{farenheit\+\_\+to\+\_\+celcius}!calculations\+::calculations@{calculations\+::calculations}}
+\subsubsection{\texorpdfstring{farenheit\+\_\+to\+\_\+celcius()}{farenheit\_to\_celcius()}}
+{\footnotesize\ttfamily double calculations.\+calculations.\+farenheit\+\_\+to\+\_\+celcius (\begin{DoxyParamCaption}\item[{double}]{faren\+\_\+temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to change from farenheit to celcius 
+\begin{DoxyParams}{Parameters}
+{\em faren\+\_\+temp} & is the farenheit temperature being converted to celcius \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a double which is the celcius temperature converted from the given farenheit temperature 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcalculations_1_1calculations_a9577ccf9df8aeea64ea3fa629bc0ea71}\label{classcalculations_1_1calculations_a9577ccf9df8aeea64ea3fa629bc0ea71}} 
+\index{calculations\+::calculations@{calculations\+::calculations}!relative\+\_\+humidity@{relative\+\_\+humidity}}
+\index{relative\+\_\+humidity@{relative\+\_\+humidity}!calculations\+::calculations@{calculations\+::calculations}}
+\subsubsection{\texorpdfstring{relative\+\_\+humidity()}{relative\_humidity()}}
+{\footnotesize\ttfamily double calculations.\+calculations.\+relative\+\_\+humidity (\begin{DoxyParamCaption}\item[{double}]{sat\+\_\+vap\+\_\+pressure,  }\item[{double}]{vap\+\_\+pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to calculate the relative humidity 
+\begin{DoxyParams}{Parameters}
+{\em sat\+\_\+vap\+\_\+pressure} & is the saturated vapor pressure used in calculating the relative humidity \\
+\hline
+{\em vap\+\_\+pressure} & is the vapor pressure used in calculatin the relative humidity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the calculated relative humidity calculated from the given saturated vapor pressure, and vapor pressure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcalculations_1_1calculations_a2b7da37ed1c95d9894ac9dff614db9e7}\label{classcalculations_1_1calculations_a2b7da37ed1c95d9894ac9dff614db9e7}} 
+\index{calculations\+::calculations@{calculations\+::calculations}!saturated\+\_\+vapor\+\_\+pressure@{saturated\+\_\+vapor\+\_\+pressure}}
+\index{saturated\+\_\+vapor\+\_\+pressure@{saturated\+\_\+vapor\+\_\+pressure}!calculations\+::calculations@{calculations\+::calculations}}
+\subsubsection{\texorpdfstring{saturated\+\_\+vapor\+\_\+pressure()}{saturated\_vapor\_pressure()}}
+{\footnotesize\ttfamily double calculations.\+calculations.\+saturated\+\_\+vapor\+\_\+pressure (\begin{DoxyParamCaption}\item[{double}]{dew\+\_\+point\+\_\+temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to calculate the saturated vapor pressureusing the dew point temperature 
+\begin{DoxyParams}{Parameters}
+{\em dew\+\_\+point\+\_\+temp} & is the dew point temperature used to calculate the saturated vapor pressure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the calculated saturated vapor pressure from the given dew point temperature 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcalculations_1_1calculations_af2e526ba0ac77a303d9b458c2642e5f4}\label{classcalculations_1_1calculations_af2e526ba0ac77a303d9b458c2642e5f4}} 
+\index{calculations\+::calculations@{calculations\+::calculations}!vapor\+\_\+pressure@{vapor\+\_\+pressure}}
+\index{vapor\+\_\+pressure@{vapor\+\_\+pressure}!calculations\+::calculations@{calculations\+::calculations}}
+\subsubsection{\texorpdfstring{vapor\+\_\+pressure()}{vapor\_pressure()}}
+{\footnotesize\ttfamily double calculations.\+calculations.\+vapor\+\_\+pressure (\begin{DoxyParamCaption}\item[{double}]{air\+\_\+temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to calculate the vapor pressure 
+\begin{DoxyParams}{Parameters}
+{\em air\+\_\+temp} & is the air temperature used to calculate the vapor pressure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the calculated vapor pressure from the given air temperature 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcalculations_1_1calculations_ae71bcea53dda2efe2673f2a4897ab684}\label{classcalculations_1_1calculations_ae71bcea53dda2efe2673f2a4897ab684}} 
+\index{calculations\+::calculations@{calculations\+::calculations}!water\+\_\+temp@{water\+\_\+temp}}
+\index{water\+\_\+temp@{water\+\_\+temp}!calculations\+::calculations@{calculations\+::calculations}}
+\subsubsection{\texorpdfstring{water\+\_\+temp()}{water\_temp()}}
+{\footnotesize\ttfamily double calculations.\+calculations.\+water\+\_\+temp (\begin{DoxyParamCaption}\item[{double}]{air\+\_\+temp,  }\item[{double}]{dew\+\_\+point\+\_\+temp,  }\item[{double}]{air\+\_\+pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Function to caluculate the water temperature 
+\begin{DoxyParams}{Parameters}
+{\em air\+\_\+temp} & is the air temperature used to caluclate water temperature \\
+\hline
+{\em dew\+\_\+point\+\_\+temp} & is the dew point temperature used to calculate water temperature \\
+\hline
+{\em air\+\_\+pressure} & is the air pressure used to calculate the water temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the water temperature calculated from the given air temperature, dew point temperature, and air pressure 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Calculations.\+cs\end{DoxyCompactItemize}

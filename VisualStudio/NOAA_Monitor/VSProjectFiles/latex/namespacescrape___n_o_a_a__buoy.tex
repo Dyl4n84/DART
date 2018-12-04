@@ -1,0 +1,71 @@
+\hypertarget{namespacescrape___n_o_a_a__buoy}{}\section{scrape\+\_\+\+N\+O\+A\+A\+\_\+buoy Namespace Reference}
+\label{namespacescrape___n_o_a_a__buoy}\index{scrape\+\_\+\+N\+O\+A\+A\+\_\+buoy@{scrape\+\_\+\+N\+O\+A\+A\+\_\+buoy}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_ac1297b9efa5abc85c1661691635c3f41}\label{namespacescrape___n_o_a_a__buoy_ac1297b9efa5abc85c1661691635c3f41}} 
+def {\bfseries words} (file\+Obj)
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_adb1ea63f42f9a21619ae902191575640}\label{namespacescrape___n_o_a_a__buoy_adb1ea63f42f9a21619ae902191575640}} 
+def {\bfseries count\+Stations} (file\+Obj)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a13231aceb490b34c59a3ff93ef1f3683}\label{namespacescrape___n_o_a_a__buoy_a13231aceb490b34c59a3ff93ef1f3683}} 
+string {\bfseries noaa\+\_\+\+Data\+\_\+url} = \char`\"{}https\+://www.\+ndbc.\+noaa.\+gov/data/latest\+\_\+obs/latest\+\_\+obs.\+txt\char`\"{}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_ad05b5be8214b4f2f095a94d7eb589c14}\label{namespacescrape___n_o_a_a__buoy_ad05b5be8214b4f2f095a94d7eb589c14}} 
+string {\bfseries single\+\_\+page\+\_\+url} = \char`\"{}https\+://www.\+ndbc.\+noaa.\+gov/station\+\_\+page.\+php?station=M\+D\+R\+M1\char`\"{}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a1c324eb194befae4063a7872336f06f7}\label{namespacescrape___n_o_a_a__buoy_a1c324eb194befae4063a7872336f06f7}} 
+{\bfseries u\+Client} = u\+Req(noaa\+\_\+\+Data\+\_\+url)
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a03665f0d0faa2bc42bb808ad824ad6e9}\label{namespacescrape___n_o_a_a__buoy_a03665f0d0faa2bc42bb808ad824ad6e9}} 
+{\bfseries page\+\_\+raw\+\_\+html} = u\+Client.\+read()
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_ad178ab153214f14621228a7f719f0f7c}\label{namespacescrape___n_o_a_a__buoy_ad178ab153214f14621228a7f719f0f7c}} 
+{\bfseries file} = open(\textquotesingle{}tmp.\+txt\textquotesingle{}, \textquotesingle{}w\textquotesingle{})
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a4fcbe090ba99971fef19beafb1a59a31}\label{namespacescrape___n_o_a_a__buoy_a4fcbe090ba99971fef19beafb1a59a31}} 
+def {\bfseries lines\+\_\+\+N\+O\+A\+A\+\_\+\+Data} = words(file)
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_ad05b95e4046291707dcfdf9e3b9451ad}\label{namespacescrape___n_o_a_a__buoy_ad05b95e4046291707dcfdf9e3b9451ad}} 
+list {\bfseries attribute\+\_\+list} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a208ab0f0e1e7dff400c7f4342f71a22b}\label{namespacescrape___n_o_a_a__buoy_a208ab0f0e1e7dff400c7f4342f71a22b}} 
+dictionary {\bfseries data} = \{\}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a30858790a57da253c204891135cfed35}\label{namespacescrape___n_o_a_a__buoy_a30858790a57da253c204891135cfed35}} 
+def {\bfseries num\+Stations} = count\+Stations(file)
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_aa1419d157780d68fd320aa068022fe2c}\label{namespacescrape___n_o_a_a__buoy_aa1419d157780d68fd320aa068022fe2c}} 
+list {\bfseries word\+\_\+\+N\+O\+A\+A\+\_\+\+Data} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_af236cd277a9ee5dbc44061ad0aee6436}\label{namespacescrape___n_o_a_a__buoy_af236cd277a9ee5dbc44061ad0aee6436}} 
+def {\bfseries words\+\_\+\+N\+O\+A\+A\+\_\+\+Data} = words(file)
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_ac431707bdcfc97de5c4e55620f3edc22}\label{namespacescrape___n_o_a_a__buoy_ac431707bdcfc97de5c4e55620f3edc22}} 
+int {\bfseries counter} = 0
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_acfb5a9032b48342e66c387977e98d0f9}\label{namespacescrape___n_o_a_a__buoy_acfb5a9032b48342e66c387977e98d0f9}} 
+{\bfseries json\+File} = open(\char`\"{}latest\+\_\+obs.\+json\char`\"{}, \char`\"{}a\char`\"{})
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_afd38d2dcc28ce29bd902515fd4f90fb4}\label{namespacescrape___n_o_a_a__buoy_afd38d2dcc28ce29bd902515fd4f90fb4}} 
+{\bfseries sort\+\_\+keys}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a4c71c7b66fe80449f261f77161497df4}\label{namespacescrape___n_o_a_a__buoy_a4c71c7b66fe80449f261f77161497df4}} 
+{\bfseries False}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a6eca3040dae84a81c50769d2c116e69f}\label{namespacescrape___n_o_a_a__buoy_a6eca3040dae84a81c50769d2c116e69f}} 
+{\bfseries indent}
+\item 
+\mbox{\Hypertarget{namespacescrape___n_o_a_a__buoy_a9bb62d822eeb576e4f5ac831d5cc117b}\label{namespacescrape___n_o_a_a__buoy_a9bb62d822eeb576e4f5ac831d5cc117b}} 
+{\bfseries separators}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}DOCSTRING - ...
+\end{DoxyVerb}
+ 
