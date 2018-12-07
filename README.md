@@ -3,7 +3,7 @@
 Welcome to our GitHub page!
 
 This is a semester long project we are undertaking for a class at Ohio University in Athens, Ohio.
-This goal is to design a windows application that helps the user interpret the data read from NOAA buoys.
+This goal is to design a windows application that helps the user interpret the data read from National Oceanic and Atmospheric Administration (NOAA) buoys.
 
 The course instructors are:
 - Dr. Chang Liu
