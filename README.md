@@ -1,8 +1,8 @@
-## The Lab Rats Project
+## Data Analysis and Record Tool (DART)
 
 Welcome to our GitHub page!
 
-This is a semester long project we are undertaking for a class at Ohio University.
+This is a semester long project we are undertaking for a class at Ohio University in Athens, Ohio.
 This goal is to design a windows application that helps the user interpret the data read from NOAA buoys.
 
 The course instructors are:
@@ -59,6 +59,9 @@ These stations are the ones we are tracking within this program
 - WEXM1
 - WELM1
 - To see the data we use and other buoy data visit the NOAA website [here](https://www.ndbc.noaa.gov/).
+
+## To Contribute
+- Feel free to submit questions, bug reports, and ideas as [GitHub Issues](https://github.com/Dyl4n84/LabRatsProject/issues)
 
 ## Other Questions
 - [Contact Us](mailto:dr233615@ohio.edu)
