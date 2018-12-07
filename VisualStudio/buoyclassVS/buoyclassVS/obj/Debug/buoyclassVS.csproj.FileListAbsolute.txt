@@ -1,6 +1,0 @@
-C:\Users\jmull\source\repos\buoyclassVS\buoyclassVS\bin\Debug\buoyclassVS.exe
-C:\Users\jmull\source\repos\buoyclassVS\buoyclassVS\bin\Debug\buoyclassVS.pdb
-C:\Users\jmull\source\repos\buoyclassVS\buoyclassVS\obj\Debug\buoyclassVS.csprojResolveAssemblyReference.cache
-C:\Users\jmull\source\repos\buoyclassVS\buoyclassVS\obj\Debug\buoyclassVS.csproj.CoreCompileInputs.cache
-C:\Users\jmull\source\repos\buoyclassVS\buoyclassVS\obj\Debug\buoyclassVS.exe
-C:\Users\jmull\source\repos\buoyclassVS\buoyclassVS\obj\Debug\buoyclassVS.pdb
