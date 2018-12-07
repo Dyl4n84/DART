@@ -15,14 +15,14 @@ The students involved in this project are:
 - Dylan Rogers
 - Josh Wright
 
-##v1.0_dev Goals
+## v1.0_dev Goals
 - Add ability to read from .JSON file
 - Graph multiple data sets
 - Reorganize the main UI and how data is displayed
 - Make the UI look more clean
 - Add calculations functionality for the user
 
-##Disclaimer
+## Disclaimer
 - This version is not going to compile at all times as it is still in development
 - To run the most recent stable version please see the master branch
 
@@ -59,7 +59,7 @@ These stations are being tracked by DART
 - WELM1
 - To see the data we use and other buoy data visit the NOAA website [here](https://www.ndbc.noaa.gov/).
 
-##To Contribute
+## To Contribute
 - Feel free to submit questions, bug reports, and ideas as [GitHub Issues](https://github.com/Dyl4n84/LabRatsProject/issues)
 
 ## Other Questions
