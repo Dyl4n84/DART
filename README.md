@@ -17,7 +17,7 @@ The students involved in this project are:
 
 ## Prerequisites
 
-- Visual .NET 4.6.1 framework
+- .NET 4.6.1 framework
 
 - Visual Studio
 
