@@ -17,11 +17,11 @@ The students involved in this project are:
 
 ## Prerequisites
 
-- Visual Basic .NET 4.6.1 framework
+- Visual .NET 4.6.1 framework
 
 - Visual Studio
 
-- Python 3 installed and the ability to run it via command prompt
+- Python 3 installed and added to PATH
 
 - Windows capable of running Visual Studio
 
