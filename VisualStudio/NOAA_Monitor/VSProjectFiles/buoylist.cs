@@ -1,63 +1,86 @@
-﻿using System;
+﻿/* Program Name: NOAA Monitor - Maine
+ * Written By: Jack Mullen, Prachetas Deshpande, Dylan Rogers, Joshua Wright
+ * Description: ...
+ *
+ ************************************************
+ *
+ * Last Editted: 11.28.2018
+ *
+ * TO DO: Josh
+ * Pull in buoy station names
+ * Set stationList data source to station name
+ * Display station data to user
+ * Implement OpenWeatherMap into WebView
+ * Set Map Mode buttons to change map overlay
+ * Display station pictures on stationList click event
+ */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
+using Newtonsoft.Json;
 
 
-public class BuoyList
+namespace NOAA_Monitor
 {
-    List<Buoy> blist; ///< The list of buoy classes
-    /** The constructor of the class
-     */
-    public BuoyList()
-	{
-        blist = new List<Buoy>();
-	}
-    /** Loads from the text file into a list of buoys
-     * @param The filename of the input file, preferably a text file
-     */
-    public void load(string file)
+    public class BuoyList
     {
-        string[] lines = File.ReadAllLines(file);
-        for (int i = 2; i < lines.Length; i++) //i starts at two to skip the first two header lines of the file.
+        public List<Buoy> List_of_buoys;
+
+        public BuoyList()
         {
-            Buoy temp = new Buoy();
-            temp.input(lines[i]);
-            blist.Add(temp);
+            List_of_buoys = new List<Buoy>();
         }
-    }
-    /** Displays the information about a buoy
-     * @param The index of the buoy list to be displayed
-     */
-    public void bdisplay(int index)
-    {
-        blist[index].display();
-    }
-    /** Searches through the list for a specific buoy
-     * @param The ID (banme) of the buoy to be searched
-     */
-    public void search(string target)
-    {
-        for(int i = 0; i < blist.Count; i++){
-            if (target == blist[i].getbname())
+
+        public BuoyList(BuoyList old)
+        {
+            List_of_buoys = new List<Buoy>();
+            int size = old.List_of_buoys.Count;
+            for (int i = 0; i < size; i++)
             {
-                blist[i].display();
-                return;
+                List_of_buoys.Add(old.List_of_buoys[i]);
             }
         }
-        Console.WriteLine("Not found");
-        return;
-    }
-    /** Copy constructor
-    * @param buoy list to be copied from
-    */
-    public BuoyList(BuoyList a)
-    {
-        blist = new List<Buoy>();
-        int size = a.blist.Count;
-        for (int i=0; i < size; i++)
-        {
-            blist.Add(a.blist[i]);
-        }
-    }
 
+        public void Load(string file)
+        {
+            using (StreamReader read = File.OpenText(file))
+            {
+                string json = read.ReadToEnd();
+                List_of_buoys = JsonConvert.DeserializeObject<List<Buoy>>(json);
+            }
+        }
+
+        public void Unload(string file)
+        {
+            string CurrentDate = DateTime.Now.ToString("M_d_yyyy");
+            CurrentDate += ".json";
+            using (StreamWriter output = File.CreateText(CurrentDate))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(output, List_of_buoys);
+            }
+        }
+
+        public void BuoyDisplayAll(int index)
+        {
+            List_of_buoys[index].DisplayAllData();
+        }
+
+        public Buoy Search(string target)
+        {
+            Buoy tmp = new Buoy();
+
+            for (int location = 0; location < List_of_buoys.Count; location++)
+            {
+                if (List_of_buoys[location].DataSet.BuoyName == target)
+                {
+                    tmp = List_of_buoys[location];
+                    return tmp;
+                }
+            }
+            return tmp;
+        }
+
+    }
 }
