@@ -1,5 +1,21 @@
 ﻿<Properties StartupConfiguration="{490DC23C-7599-4901-97E2-CFAB62F05792}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VSProjectFiles/Buoy.cs">
+    <Files>
+      <File FileName="VSProjectFiles/BuoyList.cs" Line="57" Column="36" />
+      <File FileName="VSProjectFiles/Buoy.cs" Line="93" Column="33" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NOAA_Monitor" expanded="True">
+            <Node name="NOAA_Monitor" expanded="True">
+              <Node name="Buoy.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.NOAA__Monitor PreferredExecutionTarget="MonoDevelop.Default" />
