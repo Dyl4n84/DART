@@ -1,78 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
 
 
-namespace BuoyContainer
+public class BuoyList
 {
-    public class ListOfBuoys
+    List<Buoy> blist; ///< The list of buoy classes
+    /** The constructor of the class
+     */
+    public BuoyList()
+	{
+        blist = new List<Buoy>();
+	}
+    /** Loads from the text file into a list of buoys
+     * @param The filename of the input file, preferably a text file
+     */
+    public void load(string file)
     {
-        List<Buoy> BuoyList;
-        public ListOfBuoys()
+        string[] lines = File.ReadAllLines(file);
+        for (int i = 2; i < lines.Length; i++) //i starts at two to skip the first two header lines of the file.
         {
-            BuoyList = new List<Buoy>();
+            Buoy temp = new Buoy();
+            temp.input(lines[i]);
+            blist.Add(temp);
         }
-         
-        public ListOfBuoys(ListOfBuoys old)
-        {
-            BuoyList = new List<Buoy>();
-            int size = old.BuoyList.Count;
-            for (int i = 0; i < size; i++)
-            {
-                BuoyList.Add(old.BuoyList[i]);
-            }
-        }
-
-        public void Load(string file)
-        {
-            using(StreamReader read = File.OpenText(file))
-            {
-                string json = read.ReadToEnd();
-                BuoyList = JsonConvert.DeserializeObject<List<Buoy>>(json);
-            }
-        }
-
-        public void Unload(string file)
-        {
-            string CurrentDate = DateTime.Now.ToString("M_d_yyyy");
-            CurrentDate += ".json";
-            using(StreamWriter output = File.CreateText(CurrentDate))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(output, BuoyList);
-            }
-        }
-
-        public void BuoyDisplay(int index)
-        {
-            BuoyList[index].Display();
-            return;
-        }
-
-        public void DisplayAll()
-        {
-            for(int location = 0; location < BuoyList.Count; location++)
-            {
-                BuoyList[location].Display();
-            }
-            return;
-        }
-
-        public Buoy Search(string target)
-        {
-            Buoy tmp = new Buoy();
-
-            for(int location = 0; location < BuoyList.Count; location++)
-            {
-                if (BuoyList[location].DataSet.BuoyName == target)
-                {
-                    tmp = BuoyList[location];
-                    return tmp;
-                }
-            }
-            return tmp;
-        }
-
     }
+    /** Displays the information about a buoy
+     * @param The index of the buoy list to be displayed
+     */
+    public void bdisplay(int index)
+    {
+        blist[index].display();
+    }
+    /** Searches through the list for a specific buoy
+     * @param The ID (banme) of the buoy to be searched
+     */
+    public void search(string target)
+    {
+        for(int i = 0; i < blist.Count; i++){
+            if (target == blist[i].getbname())
+            {
+                blist[i].display();
+                return;
+            }
+        }
+        Console.WriteLine("Not found");
+        return;
+    }
+    /** Copy constructor
+    * @param buoy list to be copied from
+    */
+    public BuoyList(BuoyList a)
+    {
+        blist = new List<Buoy>();
+        int size = a.blist.Count;
+        for (int i=0; i < size; i++)
+        {
+            blist.Add(a.blist[i]);
+        }
+    }
+
 }
