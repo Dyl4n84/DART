@@ -1,5 +1,20 @@
 ﻿<Properties StartupConfiguration="{490DC23C-7599-4901-97E2-CFAB62F05792}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NOAA_Monitor" expanded="True">
+            <Node name="NOAA_Monitor" expanded="True">
+              <Node name="Form1.cs" expanded="True" />
+              <Node name="graphForm.cs" expanded="True">
+                <Node name="graphForm.Designer.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.NOAA__Monitor PreferredExecutionTarget="MonoDevelop.Default" />
