@@ -28,7 +28,6 @@ namespace NOAA_Monitor
     public partial class MainWindow : MaterialForm
     {
         BuoyList Stations = new BuoyList();
-        Events Event_Processes = new Events();
 
         public MainWindow()
         {
@@ -50,10 +49,10 @@ namespace NOAA_Monitor
             string pathToSolution = @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles";
 
             // Run python webscraping script
-            Event_Processes.run_cmd(pathToSolution + @"\scrape_NOAA_buoy.py");
+            run_cmd(pathToSolution + @"\scrape_NOAA_buoy.py");
 
             // Add timestamp to buoy data file name
-            string updatedDataFile = Event_Processes.timestampFile(pathToSolution + @"\bin\Debug\tmp.txt", this);
+            string updatedDataFile = timestampFile(pathToSolution + @"\bin\Debug\tmp.txt");
 
             // Read in new Buoy data
             Stations = readBuoyData(updatedDataFile);
@@ -64,7 +63,7 @@ namespace NOAA_Monitor
             "MDRM1 44037 44033 MISM1 44032" +
             "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
 
-            List<Buoy>.Enumerator stationIter = Stations.List_of_buoys.GetEnumerator();
+            List<Buoy>.Enumerator stationIter = Stations.blist.GetEnumerator();
             Buoy tmpStation = new Buoy();
 
             ColumnHeader columnHeader1 = new ColumnHeader();
@@ -73,9 +72,9 @@ namespace NOAA_Monitor
             while (stationIter.MoveNext())
             {
                 tmpStation = stationIter.Current;
-                if (stationNames.Contains(tmpStation.DataSet.BuoyName) && !String.IsNullOrEmpty(tmpStation.DataSet.BuoyName))
+                if (stationNames.Contains(tmpStation.getbname()) && !String.IsNullOrEmpty(tmpStation.getbname()))
                 {
-                    ListViewItem stationNameItems = new ListViewItem(tmpStation.DataSet.BuoyName);
+                    ListViewItem stationNameItems = new ListViewItem(tmpStation.getbname());
                     stationList.Items.Add(stationNameItems);
                 }
             }
@@ -91,10 +90,10 @@ namespace NOAA_Monitor
             string pathToSolution = @"C:\Users\User\Code\LabRatsProject\VisualStudio\NOAA_Monitor\VSProjectFiles";
 
             // Run python webscraping script
-            Event_Processes.run_cmd(pathToSolution + @"\scrape_NOAA_buoy.py");
+            run_cmd(pathToSolution + @"\scrape_NOAA_buoy.py");
 
             // Add timestamp to buoy data file name
-            string updatedDataFile = Event_Processes.timestampFile(pathToSolution + @"\bin\Debug\tmp.txt", this);
+            string updatedDataFile = timestampFile(pathToSolution + @"\bin\Debug\tmp.txt");
 
             // Read in new Buoy data
             Stations = readBuoyData(updatedDataFile);
@@ -105,7 +104,7 @@ namespace NOAA_Monitor
             "MDRM1 44037 44033 MISM1 44032 " +
             "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
 
-            List<Buoy>.Enumerator stationIter = Stations.List_of_buoys.GetEnumerator();
+            List<Buoy>.Enumerator stationIter = Stations.blist.GetEnumerator();
             Buoy tmpStation = new Buoy();
 
             ColumnHeader columnHeader1 = new ColumnHeader();
@@ -114,9 +113,9 @@ namespace NOAA_Monitor
             while (stationIter.MoveNext())
             {
                 tmpStation = stationIter.Current;
-                if (stationNames.Contains(tmpStation.DataSet.BuoyName) && !String.IsNullOrEmpty(tmpStation.DataSet.BuoyName))
+                if (stationNames.Contains(tmpStation.getbname()) && !String.IsNullOrEmpty(tmpStation.getbname()))
                 {
-                    ListViewItem stationNameItems = new ListViewItem(tmpStation.DataSet.BuoyName);
+                    ListViewItem stationNameItems = new ListViewItem(tmpStation.getbname());
                     stationList.Items.Add(stationNameItems);
                 }
             }
@@ -124,11 +123,47 @@ namespace NOAA_Monitor
             stationList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
+        private void run_cmd(string cmd)
+        {
+
+            ProcessStartInfo pythonInfo = new ProcessStartInfo();
+            // Process python;
+            pythonInfo.FileName = @"py";
+            pythonInfo.Arguments = cmd;
+            pythonInfo.CreateNoWindow = true;
+            pythonInfo.UseShellExecute = false;
+            pythonInfo.RedirectStandardOutput = false;
+            pythonInfo.RedirectStandardError = false;
+            Process.Start(pythonInfo);
+        }
+
+        public string timestampFile(string _fileName)
+        {
+            string nowDateTime;
+
+            nowDateTime = DateTime.UtcNow.ToString("MM/dd/yyyy HH:mm");
+            updateLabel.Text = "Last Updated: " + nowDateTime + " GMT";
+            nowDateTime = nowDateTime.Replace('/', '_');
+            nowDateTime = nowDateTime.Replace(' ', '_');
+            nowDateTime = nowDateTime.Replace(':', '_');
+            string newFileName = "latest_obs-" + nowDateTime + ".txt";
+            try
+            {
+                System.IO.File.Move(_fileName, newFileName);
+            }
+            catch
+            {
+                return newFileName;
+            }
+
+            return newFileName;
+        }
+
         public BuoyList readBuoyData(string _fileName)
         {
             // Call buoy input stream function using _fileName as input
             BuoyList tmpBuoys = new BuoyList();
-            tmpBuoys.Load(_fileName);
+            tmpBuoys.load(_fileName);
 
             return tmpBuoys;
         }
