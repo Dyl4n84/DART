@@ -1,13 +1,17 @@
-/*Implementation for the graphForm class used in the LabRats Project.
-*This class is for graphing data from NOAA Buoys off the coast of Maine.
-*All functions are programmed in C# for implementation alongside VB.NET framework 4.6.1.
-*
-****************************
-*
-*Ohio University Athens, OH USA
-*Written By: Dylan Rogers
-*Last Updated: December 3rd, 2018
-*/
+/* Program Name: NOAA Monitor - Maine
+ * Written By: Dylan Rogers
+ * Description: Implementation for the graphForm class used in the LabRats Project.
+ *              This class is for graphing data from NOAA Buoys off the coast of Maine.
+ *              All functions are programmed in C# for implementation alongside VB.NET framework 4.6.1.
+ *
+ ************************************************
+ *
+ * Last Editted: 03.12.2019
+ *
+ * TO DO: Dylan
+ * Allow multiple dataset graphs
+ * Handle missing data wihtout graphing 0's
+ */
 
 using System;
 using System.Collections.Generic;
@@ -23,6 +27,7 @@ using MaterialSkin.Controls;
 
 namespace NOAA_Monitor
 {
+
   /**
   *This is the implementation of the graphing form class which inherits the MaterialForm class
   **/
@@ -35,6 +40,7 @@ namespace NOAA_Monitor
             "PSBM1 CFWM1 44027 ATGM1 44034" +
             "MDRM1 44037 44033 MISM1 44032" +
             "44005 CASM1 44007 44030 WEQM1 WEXM1 WELM1";
+
         /**
         *This is the constructor for the graphForm class
         * @param tmp is a temporary variable to transfer a BuoyList variable into the space of this class to be used for graphing
@@ -55,6 +61,7 @@ namespace NOAA_Monitor
             comboBox1.Items.Add("Visibility");
             comboBox1.Items.Add("Tide Height");
         }
+
         /**
         *This is the function for when the graph button is clicked on the graphingForm
         **/

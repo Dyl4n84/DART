@@ -1,4 +1,19 @@
-﻿using System;
+﻿/* Program Name: NOAA Monitor - Maine
+ * Written By: Dylan Rogers
+ * Description: The Buoy class holds all data variables
+ *              that the NOAA Buoys collect. This class
+ *              is used yb the BuoyList class.
+ *
+ ************************************************
+ *
+ * Last Editted: 03.12.2019
+ *
+ * TO DO: Dylan
+ * N/A
+ */
+
+
+using System;
 
 namespace NOAA_Monitor
 {

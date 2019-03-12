@@ -1,18 +1,17 @@
 ﻿/* Program Name: NOAA Monitor - Maine
  * Written By: Jack Mullen, Prachetas Deshpande, Dylan Rogers, Joshua Wright
- * Description: ...
+ * Description: The Buoylist class hold the List of Buoy 
+ *              values to be used and accessed from the Forms.
+ *              This class has the ability to load and save in
+ *              .JSON file.
  *
  ************************************************
  *
- * Last Editted: 11.28.2018
+ * Last Editted: 03.12.2019
  *
- * TO DO: Josh
- * Pull in buoy station names
- * Set stationList data source to station name
- * Display station data to user
- * Implement OpenWeatherMap into WebView
- * Set Map Mode buttons to change map overlay
- * Display station pictures on stationList click event
+ * TO DO: Dylan
+ * Add Functions for proper calculations (maybe create calculation class?)
+ * Test Load/Unload functions
  */
 
 using System;

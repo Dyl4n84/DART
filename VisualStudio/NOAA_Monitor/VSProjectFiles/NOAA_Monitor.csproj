@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buoy.cs" />
-    <Compile Include="buoylist.cs" />
+    <Compile Include="BuoyList.cs" />
     <Compile Include="Calculations.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
