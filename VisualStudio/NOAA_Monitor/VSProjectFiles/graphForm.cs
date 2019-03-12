@@ -62,7 +62,7 @@ namespace NOAA_Monitor
         {
             chart1.Series[0].Points.Clear();
 
-            List<Buoy>.Enumerator data = Stations.blist.GetEnumerator();
+            List<Buoy>.Enumerator data = Stations.List_of_buoys.GetEnumerator();
             int stepper = 0;
             int graphSelection;
 
@@ -75,10 +75,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getwindspeed());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.WindSpeed);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy. BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -91,10 +91,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getwinddirection());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.WindDirection);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -107,10 +107,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getdomwave());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.DominantWavePeriod);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -123,10 +123,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getavewave());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.AverageWave);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -139,10 +139,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getseapress());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.SeaPressure);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -155,10 +155,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getairtemp());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.AirTemperature);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -171,10 +171,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getseatemp());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.SeaTemperature);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -187,10 +187,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getdewtemp());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.DewTemperature);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -203,10 +203,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.getvis());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.Visibility);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }
@@ -219,10 +219,10 @@ namespace NOAA_Monitor
                     while (data.MoveNext())
                     {
                         tmpBuoy = data.Current;
-                        if (maineBuoys.Contains(tmpBuoy.getbname()) && !String.IsNullOrEmpty(tmpBuoy.getbname()))
+                        if (maineBuoys.Contains(tmpBuoy.BuoyName) && !String.IsNullOrEmpty(tmpBuoy.BuoyName))
                         {
-                            chart1.Series[0].Points.AddY(tmpBuoy.gettide());
-                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.getbname();
+                            chart1.Series[0].Points.AddY(tmpBuoy.Tide);
+                            chart1.Series[0].Points[stepper].AxisLabel = tmpBuoy.BuoyName;
                             chart1.Series[0].Points[stepper].IsValueShownAsLabel = true;
                             stepper++;
                         }

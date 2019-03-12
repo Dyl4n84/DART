@@ -73,7 +73,7 @@ namespace NOAA_Monitor
 
             for (int location = 0; location < List_of_buoys.Count; location++)
             {
-                if (List_of_buoys[location].DataSet.BuoyName == target)
+                if (List_of_buoys[location].BuoyName == target)
                 {
                     tmp = List_of_buoys[location];
                     return tmp;

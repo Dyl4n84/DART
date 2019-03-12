@@ -73,9 +73,9 @@ namespace NOAA_Monitor
             while (stationIter.MoveNext())
             {
                 tmpStation = stationIter.Current;
-                if (stationNames.Contains(tmpStation.DataSet.BuoyName) && !String.IsNullOrEmpty(tmpStation.DataSet.BuoyName))
+                if (stationNames.Contains(tmpStation.BuoyName) && !String.IsNullOrEmpty(tmpStation.BuoyName))
                 {
-                    ListViewItem stationNameItems = new ListViewItem(tmpStation.DataSet.BuoyName);
+                    ListViewItem stationNameItems = new ListViewItem(tmpStation.BuoyName);
                     stationList.Items.Add(stationNameItems);
                 }
             }
@@ -114,9 +114,9 @@ namespace NOAA_Monitor
             while (stationIter.MoveNext())
             {
                 tmpStation = stationIter.Current;
-                if (stationNames.Contains(tmpStation.DataSet.BuoyName) && !String.IsNullOrEmpty(tmpStation.DataSet.BuoyName))
+                if (stationNames.Contains(tmpStation.BuoyName) && !String.IsNullOrEmpty(tmpStation.BuoyName))
                 {
-                    ListViewItem stationNameItems = new ListViewItem(tmpStation.DataSet.BuoyName);
+                    ListViewItem stationNameItems = new ListViewItem(tmpStation.BuoyName);
                     stationList.Items.Add(stationNameItems);
                 }
             }
@@ -150,29 +150,29 @@ namespace NOAA_Monitor
 
             /***** Display buoy data according to station name *****/
             // Get selected station name
-            for (int i = 0; i < Stations.blist.Count; ++i)
+            for (int i = 0; i < Stations.List_of_buoys.Count; ++i)
             {
-                if (Stations.blist[i].getbname() == selectedStationName)
+                if (Stations.List_of_buoys[i].BuoyName == selectedStationName)
                 {
                     // Get Buoy from BuoyList
                     Buoy tmp = new Buoy();
-                    tmp = Stations.blist[i];
+                    tmp = Stations.List_of_buoys[i];
 
                     // Write Buoy data to labels
-                    label1.Text = "Name: " + tmp.getbname();
-                    label2.Text = "Lat/Lon:" + tmp.getlatlon();
-                    label3.Text = "Wind Speed:" + tmp.getwindspeed();
-                    label4.Text = "Gust:" + tmp.getgustspeed();
-                    label5.Text = "Wave Height:" + tmp.getwaveheight();
-                    label6.Text = "Wave Direction:" + tmp.getwavedir();
-                    label7.Text = "Wave Period:" + tmp.getdomwave();
-                    label8.Text = "Mean Tide Level:" + tmp.gettide();
-                    label9.Text = "Sea level Pressure:" + tmp.getseapress();
-                    label10.Text = "Pressure Change:" + tmp.getpressten();
-                    label11.Text = "Sea Temp.:" + tmp.getseatemp();
-                    label12.Text = "Air Temp.:" + tmp.getairtemp();
-                    label13.Text = "Dew Point:" + tmp.getdewtemp();
-                    label14.Text = "Visibility:" + tmp.getvis();
+                    label1.Text = "Name: " + tmp.BuoyName;
+                    label2.Text = "Lat/Lon:" + tmp.Latitude + " " + tmp.Longitutde;
+                    label3.Text = "Wind Speed:" + tmp.WindSpeed;
+                    label4.Text = "Gust:" + tmp.GustSpeed;
+                    label5.Text = "Wave Height:" + tmp.WaveHeight;
+                    label6.Text = "Wave Direction:" + tmp.WaveDirection;
+                    label7.Text = "Wave Period:" + tmp.DominantWavePeriod;
+                    label8.Text = "Mean Tide Level:" + tmp.Tide;
+                    label9.Text = "Sea level Pressure:" + tmp.SeaPressure;
+                    label10.Text = "Pressure Change:" + tmp.PressureChange;
+                    label11.Text = "Sea Temp.:" + tmp.SeaTemperature;
+                    label12.Text = "Air Temp.:" + tmp.AirTemperature;
+                    label13.Text = "Dew Point:" + tmp.DewTemperature;
+                    label14.Text = "Visibility:" + tmp.Visibility;
 
                 }
             }

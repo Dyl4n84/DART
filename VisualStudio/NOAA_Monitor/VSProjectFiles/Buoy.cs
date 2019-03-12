@@ -4,106 +4,6 @@ namespace NOAA_Monitor
 {
     public class Buoy
     {
-        public DataValues DataSet = new DataValues();
-
-        public Buoy()
-        {
-            DataSet.BuoyName = null;
-            DataSet.Latitude = 100;
-            DataSet.Longitutde = 180;
-            DataSet.Date = null;
-            DataSet.WindSpeed = 100;
-            DataSet.WindDirection = 400;
-            DataSet.GustSpeed = 0;
-            DataSet.WaveHeight = 0;
-            DataSet.DominantWavePeriod = 0;
-            DataSet.AverageWave = 0;
-            DataSet.WaveDirection = 400;
-            DataSet.SeaPressure = 0;
-            DataSet.PressureChange = 0;
-            DataSet.AirTemperature = 100;
-            DataSet.SeaTemperature = 100;
-            DataSet.DewTemperature = 100;
-            DataSet.Visibility = -1;
-            DataSet.Tide = 100;
-        }
-
-        public Buoy(Buoy old)
-        {
-            if (DataSet.Date != old.DataSet.Date)
-            {
-                DataSet.BuoyName = old.DataSet.BuoyName;
-                DataSet.Latitude = old.DataSet.Latitude;
-                DataSet.Longitutde = old.DataSet.Longitutde;
-                DataSet.Date = old.DataSet.Date;
-                DataSet.WindSpeed = old.DataSet.WindSpeed;
-                DataSet.WindDirection = old.DataSet.WindDirection;
-                DataSet.GustSpeed = old.DataSet.GustSpeed;
-                DataSet.WaveHeight = old.DataSet.WaveHeight;
-                DataSet.DominantWavePeriod = old.DataSet.DominantWavePeriod;
-                DataSet.AverageWave = old.DataSet.AverageWave;
-                DataSet.WaveDirection = old.DataSet.WaveDirection;
-                DataSet.SeaPressure = old.DataSet.SeaPressure;
-                DataSet.PressureChange = old.DataSet.PressureChange;
-                DataSet.AirTemperature = old.DataSet.AirTemperature;
-                DataSet.SeaTemperature = old.DataSet.SeaTemperature;
-                DataSet.DewTemperature = old.DataSet.DewTemperature;
-                DataSet.Visibility = old.DataSet.Visibility;
-                DataSet.Tide = old.DataSet.Tide;
-            }
-        }
-
-        public void DisplayAll()
-        {
-            Console.Write(DataSet.BuoyName);
-            Console.Write(" ");
-            Console.Write(DataSet.Longitutde);
-            Console.Write(" ");
-            Console.Write(DataSet.Latitude);
-            Console.Write(" ");
-            Console.Write(DataSet.Date);
-            Console.Write(" ");
-            Console.Write(DataSet.WindSpeed);
-            Console.Write(" ");
-            Console.Write(DataSet.WindDirection);
-            Console.Write(" ");
-            Console.Write(DataSet.GustSpeed);
-            Console.Write(" ");
-            Console.Write(DataSet.WaveHeight);
-            Console.Write(" ");
-            Console.Write(DataSet.DominantWavePeriod);
-            Console.Write(" ");
-            Console.Write(DataSet.AverageWave);
-            Console.Write(" ");
-            Console.Write(DataSet.WaveDirection);
-            Console.Write(" ");
-            Console.Write(DataSet.SeaPressure);
-            Console.Write(" ");
-            Console.Write(DataSet.PressureChange);
-            Console.Write(" ");
-            Console.Write(DataSet.AirTemperature);
-            Console.Write(" ");
-            Console.Write(DataSet.SeaTemperature);
-            Console.Write(" ");
-            Console.Write(DataSet.DewTemperature);
-            Console.Write(" ");
-            Console.Write(DataSet.Visibility);
-            Console.Write(" ");
-            Console.Write(DataSet.Tide);
-            Console.Write("\n");
-        }
-
-        public void DisplayAllData()
-        {
-            DisplayAll();
-        }
-
-
-    }
-
-
-    public struct DataValues
-    {
         public string BuoyName; /// The Buoy ID
         public double Latitude; /// The latitude coordinates of the buoy
         public double Longitutde; /// The longitude coordinates of the buoy
@@ -123,6 +23,93 @@ namespace NOAA_Monitor
         public double Visibility; /// Station visibility in nautical miles
         public double Tide; /// The water level in feet above or below Mean Lower Low Water
 
+
+        public Buoy()
+        {
+            BuoyName = null;
+            Latitude = 100;
+            Longitutde = 180;
+            Date = null;
+            WindSpeed = 100;
+            WindDirection = 400;
+            GustSpeed = 0;
+            WaveHeight = 0;
+            DominantWavePeriod = 0;
+            AverageWave = 0;
+            WaveDirection = 400;
+            SeaPressure = 0;
+            PressureChange = 0;
+            AirTemperature = 100;
+            SeaTemperature = 100;
+            DewTemperature = 100;
+            Visibility = -1;
+            Tide = 100;
+        }
+
+        public Buoy(Buoy old)
+        {
+            if (Date != old.Date)
+            {
+                BuoyName = old.BuoyName;
+                Latitude = old.Latitude;
+                Longitutde = old.Longitutde;
+                Date = old.Date;
+                WindSpeed = old.WindSpeed;
+                WindDirection = old.WindDirection;
+                GustSpeed = old.GustSpeed;
+                WaveHeight = old.WaveHeight;
+                DominantWavePeriod = old.DominantWavePeriod;
+                AverageWave = old.AverageWave;
+                WaveDirection = old.WaveDirection;
+                SeaPressure = old.SeaPressure;
+                PressureChange = old.PressureChange;
+                AirTemperature = old.AirTemperature;
+                SeaTemperature = old.SeaTemperature;
+                DewTemperature = old.DewTemperature;
+                Visibility = old.Visibility;
+                Tide = old.Tide;
+            }
+        }
+
+        public void DisplayAllData()
+        {
+            Console.Write(BuoyName);
+            Console.Write(" ");
+            Console.Write(Longitutde);
+            Console.Write(" ");
+            Console.Write(Latitude);
+            Console.Write(" ");
+            Console.Write(Date);
+            Console.Write(" ");
+            Console.Write(WindSpeed);
+            Console.Write(" ");
+            Console.Write(WindDirection);
+            Console.Write(" ");
+            Console.Write(GustSpeed);
+            Console.Write(" ");
+            Console.Write(WaveHeight);
+            Console.Write(" ");
+            Console.Write(DominantWavePeriod);
+            Console.Write(" ");
+            Console.Write(AverageWave);
+            Console.Write(" ");
+            Console.Write(WaveDirection);
+            Console.Write(" ");
+            Console.Write(SeaPressure);
+            Console.Write(" ");
+            Console.Write(PressureChange);
+            Console.Write(" ");
+            Console.Write(AirTemperature);
+            Console.Write(" ");
+            Console.Write(SeaTemperature);
+            Console.Write(" ");
+            Console.Write(DewTemperature);
+            Console.Write(" ");
+            Console.Write(Visibility);
+            Console.Write(" ");
+            Console.Write(Tide);
+            Console.Write("\n");
+        }
 
     }
 
